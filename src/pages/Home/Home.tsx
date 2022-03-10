@@ -34,12 +34,10 @@ const Home = () => {
 
         const web3 = initializeWallet();
 
-        const transaction = await web3.eth.sendTransaction({
-            ...json,
-            from: '0xca056Fc710F638d48FF6129C9F57FD691b2c73f6',
-        });
-
-        console.log(transaction);
+        // const transaction = await web3.eth.sendTransaction({
+        //     ...json,
+        //     from: '0xca056Fc710F638d48FF6129C9F57FD691b2c73f6',
+        // });
     };
 
     return (
