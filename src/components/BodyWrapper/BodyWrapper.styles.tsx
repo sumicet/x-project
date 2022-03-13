@@ -20,6 +20,27 @@ export const PageWrapper = styled.div`
 
 export const Menu = styled.div`
     display: flex;
-    background-color: purple;
-    width: 100%;
+    min-width: 100%;
+    padding: ${props =>
+        `${props.theme.spacing[5]} ${props.theme.spacing[5]} 0 ${props.theme.spacing[5]}`};
+    align-items: center;
+
+    .text {
+        min-width: max-content;
+    }
+
+    .input {
+        max-width: 500px;
+    }
+
+    .connect-button-container {
+        display: flex;
+        flex: 1;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+`;
+
+export const LogoContainer = styled.div`
+    margin-right: ${props => props.theme.spacing[6]};
 `;

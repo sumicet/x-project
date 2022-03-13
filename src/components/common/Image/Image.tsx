@@ -23,25 +23,28 @@ const Image: React.FC<ImageProps> = ({ src, alt, width, height, ...props }) => {
     useEffect(() => {
         let observer: IntersectionObserver;
 
-        if (imgRef.current) {
-            observer = new IntersectionObserver(
-                entries => {
-                    entries.forEach(entry => {
-                        const { isIntersecting } = entry;
-                        if (isIntersecting) {
-                            setIsLoaded(true);
-                            observer.disconnect();
-                        }
-                    });
-                },
-                {
-                    root: null,
-                    rootMargin: '200px',
-                    threshold: 0,
-                }
-            );
-            observer.observe(imgRef.current);
+        if (!imgRef.current) {
+            return;
         }
+
+        observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    const { isIntersecting } = entry;
+                    if (isIntersecting) {
+                        setIsLoaded(true);
+                        observer.disconnect();
+                    }
+                });
+            },
+            {
+                root: null,
+                rootMargin: '200px',
+                threshold: 0,
+            }
+        );
+
+        observer.observe(imgRef.current);
 
         return () => {
             if (observer) {

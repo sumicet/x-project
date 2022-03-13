@@ -7,6 +7,14 @@ html,
     overflow-x: hidden;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
 @font-face {
     font-family: 'Roboto';
     font-weight: 400;

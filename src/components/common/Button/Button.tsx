@@ -1,13 +1,14 @@
 import styled from 'styled-components';
-import { Color, Spacing } from '../../theme/default';
+import { Color, Spacing } from '../../../theme/default';
+import { HTMLProps } from '../../../types/default';
 import { ParagraphBlack2, TextGradient } from '../Text/Text.styles';
 
-interface BaseProps {
+interface BaseProps extends Omit<HTMLProps<HTMLButtonElement>, 'ref' | 'color'> {
     padding?: Spacing;
     margin?: string;
 }
 
-export const Button = styled.div<BaseProps>`
+export const Button = styled.button<BaseProps>`
     height: ${props => props.theme.size.buttonHeight};
     display: flex;
     align-items: center;
@@ -16,8 +17,10 @@ export const Button = styled.div<BaseProps>`
     padding-right: ${props => props.padding || props.theme.spacing[3]};
     border-radius: ${props => props.theme.borderRadius};
     cursor: pointer;
+    border: 0px;
     ${props => props.margin && `margin: ${props.margin}`};
     width: fit-content;
+    min-width: max-content;
 `;
 
 export const ButtonBaseColored = styled(Button)`
@@ -45,6 +48,8 @@ const ButtonOutlineColoredBaseContainer = styled.span`
     border-radius: ${props => props.theme.borderRadius};
     display: flex;
     padding: 0px;
+
+    min-width: max-content;
 `;
 
 export const ButtonOutlineColoredBase = styled(Button)<{ color?: Color }>`
@@ -65,7 +70,7 @@ export const ButtonOutlineNeutralBase = styled(Button)`
     &:hover {
         border-color: ${props => props.theme.color.hoverNeutralMedium2};
         p {
-            color: ${props => props.theme.color.hoverText1} !important;
+            color: ${props => props.theme.color.hoverText1};
         }
     }
 `;

@@ -91,6 +91,7 @@ export const theme = {
         3: '16px',
         4: '20px',
         5: '32px',
+        6: '64px',
     },
     size: {
         buttonHeight: '42px',
