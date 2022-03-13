@@ -16,7 +16,6 @@ export const PageWrapper = styled.div`
     width: 100%;
     display: flex;
     flex: 1;
-    background-color: aquamarine;
 `;
 
 export const Menu = styled.div`

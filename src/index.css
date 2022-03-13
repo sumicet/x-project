@@ -6,3 +6,39 @@ html,
     margin: 0;
     overflow-x: hidden;
 }
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 400;
+    src: local('Roboto'), url(./assets/fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 700;
+    src: local('Roboto'), url(./assets/fonts/Roboto-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 900;
+    src: local('Roboto'), url(./assets/fonts/Roboto-Black.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Circular Std';
+    font-weight: 500;
+    src: local('Circular Std'), url(./assets/fonts/Circular-Std-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Circular Std';
+    font-weight: 700;
+    src: local('Circular Std'), url(./assets/fonts/Circular-Std-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Circular Std';
+    font-weight: 900;
+    src: local('Circular Std'), url(./assets/fonts/Circular-Std-Black.ttf) format('truetype');
+}
