@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 import * as Styled from './BodyWrapper.styles';
+// @ts-ignore
+import { ReactComponent as Logo } from '../../assets/images/logo.svg';
 
 interface BodyWrapperProps {
     children: ReactNode;
@@ -11,7 +13,9 @@ interface BodyWrapperProps {
 const BodyWrapper = ({ children }: BodyWrapperProps) => {
     return (
         <Styled.BodyWrapper>
-            <Styled.Menu>hello</Styled.Menu>
+            <Styled.Menu>
+                <Logo />
+            </Styled.Menu>
             <Styled.PageWrapper>{children}</Styled.PageWrapper>
         </Styled.BodyWrapper>
     );
