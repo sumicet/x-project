@@ -13,8 +13,8 @@ export const Button = styled.button<BaseProps>`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: ${props => props.padding || props.theme.spacing[3]};
-    padding-right: ${props => props.padding || props.theme.spacing[3]};
+    padding-left: ${props => props.padding || props.theme.spacing[4]};
+    padding-right: ${props => props.padding || props.theme.spacing[4]};
     border-radius: ${props => props.theme.borderRadius};
     cursor: pointer;
     border: 0px;
@@ -91,9 +91,9 @@ export const ButtonOutlineColored = ({ text, margin, ...props }: ButtonProps) =>
     return (
         <ButtonOutlineColoredBaseContainer style={{ margin }}>
             <ButtonOutlineColoredBase {...props}>
-                <TextGradient family={2} size={1} weight={3}>
-                    {text}
-                </TextGradient>
+                <ParagraphBlack2>
+                    <TextGradient>{text}</TextGradient>
+                </ParagraphBlack2>
             </ButtonOutlineColoredBase>
         </ButtonOutlineColoredBaseContainer>
     );

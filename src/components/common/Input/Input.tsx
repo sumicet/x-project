@@ -17,7 +17,7 @@ const Input = styled.input<InputProps>`
     font-weight: ${props => props.theme.font.weight[1]};
     height: ${props => props.theme.size.buttonHeight};
     outline: 0;
-    padding: 0 ${props => props.theme.spacing[3]};
+    padding: 0 ${props => props.theme.spacing[4]};
     width: 100%;
 
     &::placeholder {

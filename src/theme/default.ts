@@ -1,4 +1,22 @@
+const breakpoint = {
+    xs: 370,
+    sm: 576,
+    md: 852,
+    lg: 968,
+    xl: 1080,
+    xxl: 1200,
+};
+
 export const theme = {
+    breakpoint,
+    mediaQuery: {
+        xs: `@media screen and (min-width: ${breakpoint.xs}px)`,
+        sm: `@media screen and (min-width: ${breakpoint.sm}px)`,
+        md: `@media screen and (min-width: ${breakpoint.md}px)`,
+        lg: `@media screen and (min-width: ${breakpoint.lg}px)`,
+        xl: `@media screen and (min-width: ${breakpoint.xl}px)`,
+        xxl: `@media screen and (min-width: ${breakpoint.xxl}px)`,
+    },
     color: {
         neutralDark: '#121212',
         neutralMedium1: '#1C1C1C',
@@ -88,13 +106,19 @@ export const theme = {
     spacing: {
         1: '4px',
         2: '8px',
-        3: '16px',
-        4: '20px',
-        5: '32px',
-        6: '64px',
+        3: '12px',
+        4: '16px',
+        5: '20px',
+        6: '32px',
+        7: '64px',
     },
     size: {
         buttonHeight: '42px',
+    },
+    animation: {
+        transition: {
+            default: (property: string) => `transition: ${property} 0.2s ease-in-out`,
+        },
     },
 };
 

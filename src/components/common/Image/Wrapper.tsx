@@ -1,26 +1,23 @@
 import { forwardRef, HTMLAttributes } from 'react';
 import styled from 'styled-components';
 
-const StyledWrapper = styled.div<{ $width: number; $height: number }>`
-    max-height: ${({ $height }) => $height}px;
-    max-width: ${({ $width }) => $width}px;
+const StyledWrapper = styled.div<{ margin?: string; width?: number; height?: number }>`
     position: relative;
-    width: 100%;
-
-    &:after {
-        content: '';
-        display: block;
-        padding-top: ${({ $width, $height }) => ($height / $width) * 100}%;
-    }
+    width: ${props => `${props.width}px` || '100%'};
+    height: ${props => `${props.height}px` || '100%'};
+    ${props => props.margin && `margin: ${props.margin}`};
+    overflow: hidden;
+    border-radius: ${props => props.theme.borderRadius};
 `;
 
 interface WrapperProps extends HTMLAttributes<HTMLDivElement> {
-    width: number;
-    height: number;
+    margin?: string;
+    width?: number;
+    height?: number;
 }
 
-const Wrapper = forwardRef<HTMLDivElement, WrapperProps>(({ width, height, ...props }, ref) => {
-    return <StyledWrapper ref={ref} $width={width} $height={height} {...props} />;
+const Wrapper = forwardRef<HTMLDivElement, WrapperProps>((props, ref) => {
+    return <StyledWrapper ref={ref} {...props} />;
 });
 
 export default Wrapper;

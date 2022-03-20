@@ -2,21 +2,24 @@ import React, { ImgHTMLAttributes, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import Wrapper from './Wrapper';
 import Placeholder from './Placeholder';
+import Darken from './Darken';
 
-const StyledImage = styled.img`
+const StyledImage = styled.img<{ isHovered?: boolean }>`
     height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
     width: 100%;
+    object-fit: cover;
+    transform: scale(${props => (props.isHovered ? 1.03 : 1)});
+    ${props => props.theme.animation.transition.default('transform')};
 `;
 
-export interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
-    width: number;
-    height: number;
+interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
+    width?: number;
+    height?: number;
+    margin?: string;
+    isHovered?: boolean;
 }
 
-const Image: React.FC<ImageProps> = ({ src, alt, width, height, ...props }) => {
+const Image: React.FC<ImageProps> = ({ src, alt, margin, width, height, isHovered, ...props }) => {
     const imgRef = useRef<HTMLDivElement>(null);
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -54,8 +57,13 @@ const Image: React.FC<ImageProps> = ({ src, alt, width, height, ...props }) => {
     }, [src]);
 
     return (
-        <Wrapper ref={imgRef} height={height} width={width} {...props}>
-            {isLoaded ? <StyledImage src={src} alt={alt} /> : <Placeholder />}
+        <Wrapper ref={imgRef} margin={margin} width={width} height={height}>
+            {isLoaded ? (
+                <StyledImage src={src} alt={alt} isHovered={isHovered} {...props} />
+            ) : (
+                <Placeholder {...props} />
+            )}
+            <Darken opacity={isHovered ? 0 : 0.3} />
         </Wrapper>
     );
 };

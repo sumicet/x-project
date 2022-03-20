@@ -1,7 +1,8 @@
+import { HTMLAttributes } from 'react';
 import styled from 'styled-components';
 import { Color, FontFamily, FontSize, FontWeight } from '../../../theme/default';
 
-interface TextProps {
+interface TextProps extends HTMLAttributes<HTMLParagraphElement> {
     size?: FontSize;
     color?: Color;
     weight?: FontWeight;
@@ -10,7 +11,7 @@ interface TextProps {
     margin?: string;
 }
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLParagraphElement> {
     color?: Color;
 }
 
@@ -28,11 +29,13 @@ export const Text = styled.p<TextProps>`
 `;
 
 export const TextGradient = styled(Text)<{
-    size: FontSize;
-    weight: FontWeight;
-    family: FontFamily;
     color?: Color;
 }>`
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    display: inherit;
     background: ${props =>
         (props.color && props.theme.color[props.color]) ||
         `-webkit-linear-gradient(${props.theme.color.gradientSimple})`};
@@ -110,4 +113,12 @@ export const ParagraphSmall = styled(Text)<Props>`
     font-size: ${props => props.theme.font.presets.paragraphSmall.size};
     font-weight: ${props => props.theme.font.presets.paragraphSmall.weight};
     font-family: ${props => props.theme.font.presets.paragraphSmall.family};
+`;
+
+export const TextRowEllipsis = styled.span<{ rows: number }>`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: ${props => props.rows};
+    -webkit-box-orient: vertical;
 `;
