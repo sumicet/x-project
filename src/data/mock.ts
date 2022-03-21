@@ -56,7 +56,7 @@ export const fundraisers: Fundraiser[] = [
         Flexport.org is organizing shipments of relief supplies to refugee sites in Poland, Romania, Hungary, Slovakia and Moldova.
          
         Airbnb.org is providing free, short-term housing to refugees fleeing Ukraine.`,
-        category: 'Emergency',
+        category: 'Financial Emergency',
         creator: {
             image: 'https://cdn.quotesgram.com/img/43/6/620194072-Baby-panda-giant-bucket-of-cute.jpg',
             username: 'Panda',
@@ -100,7 +100,7 @@ export const fundraisers: Fundraiser[] = [
         Flexport.org is organizing shipments of relief supplies to refugee sites in Poland, Romania, Hungary, Slovakia and Moldova.
          
         Airbnb.org is providing free, short-term housing to refugees fleeing Ukraine.`,
-        category: 'Emergency',
+        category: 'Memorial',
         creator: {
             image: 'https://cdn.quotesgram.com/img/43/6/620194072-Baby-panda-giant-bucket-of-cute.jpg',
             username: 'Panda',
@@ -141,7 +141,7 @@ export const fundraisers: Fundraiser[] = [
         Flexport.org is organizing shipments of relief supplies to refugee sites in Poland, Romania, Hungary, Slovakia and Moldova.
          
         Airbnb.org is providing free, short-term housing to refugees fleeing Ukraine.`,
-        category: 'Emergency',
+        category: 'Nonprofit',
         creator: {
             image: 'https://cdn.quotesgram.com/img/43/6/620194072-Baby-panda-giant-bucket-of-cute.jpg',
             username: 'Panda',

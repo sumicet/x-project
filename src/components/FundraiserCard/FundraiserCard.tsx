@@ -71,12 +71,14 @@ const FundraiserCard = ({
                     {title}
                 </Header3>
 
-                <Paragraph
-                    color={isHovered ? 'hoverText2' : 'text2'}
-                    margin={`0 0 ${theme.spacing[3]} 0`}
-                >
-                    <TextRowEllipsis rows={3}>{description}</TextRowEllipsis>
-                </Paragraph>
+                <Styled.Description>
+                    <Paragraph
+                        color={isHovered ? 'hoverText2' : 'text2'}
+                        margin={`0 0 ${theme.spacing[3]} 0`}
+                    >
+                        <TextRowEllipsis rows={3}>{description}</TextRowEllipsis>
+                    </Paragraph>
+                </Styled.Description>
 
                 <ParagraphBlack1
                     color={isHovered ? 'hoverText1' : 'text1'}
@@ -84,7 +86,7 @@ const FundraiserCard = ({
                     margin={`0 0 ${theme.spacing[3]} 0`}
                 >
                     Raised <TextGradient>{parseFloat(collected).toLocaleString()}</TextGradient> out
-                    of {parseFloat(collected).toLocaleString()} {config.fiatCurrency}
+                    of {parseFloat(goal).toLocaleString()} {config.fiatCurrency}
                 </ParagraphBlack1>
 
                 <Category name={category} />
