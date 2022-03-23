@@ -42,7 +42,7 @@ export interface Fundraiser {
     };
     socialMedia: SocialMedia[];
     category: FundraiserCategory;
-    images: string[];
+    image: string;
     timestamp: Date;
 }
 

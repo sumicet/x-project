@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from 'react';
+import { ReactNode, useCallback, useEffect } from 'react';
 import * as Styled from './BodyWrapper.styles';
 // @ts-ignore
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
@@ -6,7 +6,6 @@ import { ParagraphBlack1 } from '../common/Text/Text.styles';
 import Input from '../common/Input/Input';
 import { ButtonOutlineColored } from '../common/Button/Button';
 import { Link } from '../common/Link/Link';
-import { useMetamask } from '../../hooks/useMetamask';
 import { useAppSelector } from '../../redux/hooks';
 import { formatWalletAddress } from '../../utils/common';
 import { theme } from '../../theme/default';
@@ -21,7 +20,6 @@ interface BodyWrapperProps {
  * Container element that wraps the content of most pages and the tabs.
  */
 const BodyWrapper = ({ children }: BodyWrapperProps) => {
-    const { connectMetamask } = useMetamask();
     const { walletAddress } = useAppSelector(state => state.wallet);
     const { width } = useAppSelector(state => state.ui.window);
 
@@ -30,6 +28,8 @@ const BodyWrapper = ({ children }: BodyWrapperProps) => {
     }, [walletAddress]);
 
     const doSomething = () => {};
+
+    const connectWallet = useCallback(() => {}, []);
 
     return (
         <Styled.BodyWrapper>
@@ -68,7 +68,7 @@ const BodyWrapper = ({ children }: BodyWrapperProps) => {
                                     (walletAddress && formatWalletAddress(walletAddress)) ||
                                     'Connect wallet'
                                 }
-                                onClick={walletAddress ? doSomething : connectMetamask}
+                                onClick={walletAddress ? doSomething : connectWallet}
                             />
                         </div>
                     </>

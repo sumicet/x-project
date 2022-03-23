@@ -4,7 +4,7 @@ import {
     ButtonOutlineNeutral,
 } from '../../components/common/Button/Button';
 import { Header1 } from '../../components/common/Text/Text.styles';
-import FundraiserCard from '../../components/FundraiserCard/FundraiserCard';
+import FundraiserCard from '../../components/cards/FundraiserCard/FundraiserCard';
 import { fundraisers } from '../../data/mock';
 import * as Styled from './Home.styled';
 
@@ -24,7 +24,7 @@ const Home = () => {
                         description={fundraiser.description}
                         collected={fundraiser.funds.collected}
                         goal={fundraiser.funds.goal}
-                        image={fundraiser.images[0]}
+                        image={fundraiser.image}
                         timestamp={fundraiser.timestamp}
                         category={fundraiser.category}
                     />

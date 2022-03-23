@@ -13,13 +13,18 @@ import './assets/fonts/Circular-Std-Medium.ttf';
 import './assets/fonts/Circular-Std-Bold.ttf';
 import './assets/fonts/Circular-Std-Black.ttf';
 import store from './redux/store';
+import ModalProvider from './components/Modal/ModalProvider';
+import { GlobalStyle } from './styles/GlobalStyle';
 
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
             <BrowserRouter>
                 <ThemeProvider theme={theme}>
-                    <App />
+                    <GlobalStyle />
+                    <ModalProvider>
+                        <App />
+                    </ModalProvider>
                 </ThemeProvider>
             </BrowserRouter>
         </Provider>

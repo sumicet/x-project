@@ -36,12 +36,7 @@ export const fundraisers: Fundraiser[] = [
             ],
             currenciesCount: '4',
         },
-        images: [
-            'https://www.bakermckenzie.com/-/media/images/locations/ukraine/ukraine-headline-module1440x788.jpg?sc_lang=de',
-            'https://www.state.gov/wp-content/uploads/2018/11/Ukraine-2109x1406.jpg',
-            'https://img.msf.org/AssetLink/4n112v03e58j42g2e338j541egg0168w.jpg',
-            'https://www.aljazeera.com/wp-content/uploads/2022/03/2022-03-06T124137Z_1358495640_RC2VWS9C4KI0_RTRMADP_3_UKRAINE-CRISIS-IRPIN-1.jpg?resize=770%2C513',
-        ],
+        image: 'https://www.bakermckenzie.com/-/media/images/locations/ukraine/ukraine-headline-module1440x788.jpg?sc_lang=de',
         timestamp: new Date('20.03.2021'),
     },
     {
@@ -80,12 +75,7 @@ export const fundraisers: Fundraiser[] = [
             ],
             currenciesCount: '4',
         },
-        images: [
-            'https://www.atlanticcouncil.org/wp-content/uploads/2022/03/2022-03-01T172856Z_1526192628_RC2RTS9SHDCX_RTRMADP_3_UKRAINE-CRISIS-CYPRUS-PROTESTS-1024x612.jpg',
-            'https://www.state.gov/wp-content/uploads/2018/11/Ukraine-2109x1406.jpg',
-            'https://img.msf.org/AssetLink/4n112v03e58j42g2e338j541egg0168w.jpg',
-            'https://www.aljazeera.com/wp-content/uploads/2022/03/2022-03-06T124137Z_1358495640_RC2VWS9C4KI0_RTRMADP_3_UKRAINE-CRISIS-IRPIN-1.jpg?resize=770%2C513',
-        ],
+        image: 'https://www.atlanticcouncil.org/wp-content/uploads/2022/03/2022-03-01T172856Z_1526192628_RC2RTS9SHDCX_RTRMADP_3_UKRAINE-CRISIS-CYPRUS-PROTESTS-1024x612.jpg',
         timestamp: new Date('20.03.2022'),
     },
     {
@@ -124,9 +114,7 @@ export const fundraisers: Fundraiser[] = [
             ],
             currenciesCount: '4',
         },
-        images: [
-            'https://media.gq.com/photos/5dcaf2db81b355000904c757/master/pass/mount-everest-gq-men-of-the-year-2019-lede.jpg',
-        ],
+        image: 'https://media.gq.com/photos/5dcaf2db81b355000904c757/master/pass/mount-everest-gq-men-of-the-year-2019-lede.jpg',
         timestamp: new Date('03.01.2022'),
     },
     {
@@ -165,9 +153,7 @@ export const fundraisers: Fundraiser[] = [
             ],
             currenciesCount: '4',
         },
-        images: [
-            'https://assets.auto-expert.md/assets/resize//wp-content/uploads/2019/04/600x400-maxresdefault-1.jpg',
-        ],
+        image: 'https://assets.auto-expert.md/assets/resize//wp-content/uploads/2019/04/600x400-maxresdefault-1.jpg',
         timestamp: new Date('12.02.2022'),
     },
     {
@@ -206,9 +192,7 @@ export const fundraisers: Fundraiser[] = [
             ],
             currenciesCount: '4',
         },
-        images: [
-            'https://www.brinknews.com/wp-content/uploads/2022/02/Shibuya-Japan_jezael-melgoza-alY6_OpdwRQ-unsplash.jpg',
-        ],
+        image: 'https://www.brinknews.com/wp-content/uploads/2022/02/Shibuya-Japan_jezael-melgoza-alY6_OpdwRQ-unsplash.jpg',
         timestamp: new Date('14.02.2022'),
     },
 ];

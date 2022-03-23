@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { useWindowSize } from 'react-use';
 import BodyWrapper from './components/BodyWrapper/BodyWrapper';
 import Discover from './pages/Discover/Discover';
+import Fundraiser from './pages/Fundraiser/Fundraiser';
 import Home from './pages/Home/Home';
 import { useAppDispatch } from './redux/hooks';
 import { setUi } from './redux/slices/uiSlice';
@@ -27,6 +28,7 @@ const App = () => {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/discover' element={<Discover />} />
+                <Route path='/fundraiser/:id' element={<Fundraiser />} />
             </Routes>
         </BodyWrapper>
     );

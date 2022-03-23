@@ -1,18 +1,18 @@
 import { memo, useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMeasure } from 'react-use';
-import { config } from '../../config';
-import { FundraiserCategory } from '../../redux/apis/fundraisers/types';
-import { theme } from '../../theme/default';
-import Category from '../Category/Category';
-import Image from '../common/Image/Image';
+import { config } from '../../../config';
+import { FundraiserCategory } from '../../../redux/apis/fundraisers/types';
+import { theme } from '../../../theme/default';
+import Category from '../../Category/Category';
+import Image from '../../common/Image/Image';
 import {
     Header3,
     Paragraph,
     ParagraphBlack1,
     TextGradient,
     TextRowEllipsis,
-} from '../common/Text/Text.styles';
+} from '../../common/Text/Text.styles';
 import * as Styled from './FundraiserCard.styled';
 
 interface FundraiserCardProps {
