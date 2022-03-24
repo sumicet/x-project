@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { useTheme } from 'styled-components';
 import { config } from '../../config';
 import { Currency } from '../../redux/apis/fundraisers/types';
@@ -13,8 +14,13 @@ interface ProgressProps {
     currenciesCount: string | null;
 }
 
-const Progress = ({ collected, goal }: ProgressProps) => {
+const Progress = ({ collected, goal, currencies, currenciesCount }: ProgressProps) => {
     const theme = useTheme();
+
+    const currenciesNotVisible = useMemo(
+        () => currenciesCount && currencies && parseInt(currenciesCount, 10) - currencies.length,
+        [currencies, currenciesCount]
+    );
 
     return (
         <Styled.Progress>
@@ -31,7 +37,32 @@ const Progress = ({ collected, goal }: ProgressProps) => {
                     </Header3>
                 )}
             </Row>
-            <ParagraphSmall color='text3'>Collected</ParagraphSmall>
+            <Row margin={`0 0 ${theme.spacing[6]} 0`}>
+                {currencies && currencies.length > 0 && (
+                    <>
+                        <ParagraphSmall color='text3' className='same-line'>
+                            Collected&nbsp;
+                        </ParagraphSmall>
+                        {currencies.map((currency, index) => (
+                            <>
+                                <ParagraphSmall color='text2' className='same-line'>
+                                    {currency.amount} {currency.name}
+                                </ParagraphSmall>
+                                {index < currencies.length - 1 && (
+                                    <ParagraphSmall color='text3' className='same-line'>
+                                        ,&nbsp;
+                                    </ParagraphSmall>
+                                )}
+                            </>
+                        ))}
+                        {currenciesNotVisible && (
+                            <ParagraphSmall color='text3' className='same-line'>
+                                , and {currenciesNotVisible} more
+                            </ParagraphSmall>
+                        )}
+                    </>
+                )}
+            </Row>
         </Styled.Progress>
     );
 };
