@@ -59,8 +59,8 @@ const FundraiserCard = ({
                     src={image}
                     alt={title}
                     margin={`0 0 ${theme.spacing[4]} 0`}
-                    width={width}
-                    height={width}
+                    width={`${width}px`}
+                    height={`${width}px`}
                     isHovered={isHovered}
                 />
 

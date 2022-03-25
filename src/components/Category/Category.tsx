@@ -11,11 +11,13 @@ interface CategoryProps {
 
 const Category = ({ name, margin }: CategoryProps) => {
     return (
-        <Link to={{ pathname: name ? `/${getCategoryPath(name)}` : '' }} style={{ margin }}>
-            <Styled.Category>
-                <ParagraphBlack2>{name}</ParagraphBlack2>
-            </Styled.Category>
-        </Link>
+        <div style={{ margin }}>
+            <Link to={{ pathname: name ? `/${getCategoryPath(name)}` : '' }}>
+                <Styled.Category>
+                    <ParagraphBlack2>{name}</ParagraphBlack2>
+                </Styled.Category>
+            </Link>
+        </div>
     );
 };
 

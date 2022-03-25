@@ -1,10 +1,10 @@
 import { forwardRef, HTMLAttributes } from 'react';
 import styled from 'styled-components';
 
-const StyledWrapper = styled.div<{ margin?: string; width?: number; height?: number }>`
+const StyledWrapper = styled.div<{ margin?: string; width?: string; height?: string }>`
     position: relative;
-    width: ${props => `${props.width}px` || '100%'};
-    height: ${props => `${props.height}px` || '100%'};
+    width: ${props => props.width || '100%'};
+    height: ${props => props.height || '100%'};
     ${props => props.margin && `margin: ${props.margin}`};
     overflow: hidden;
     border-radius: ${props => props.theme.borderRadius};
@@ -12,8 +12,8 @@ const StyledWrapper = styled.div<{ margin?: string; width?: number; height?: num
 
 interface WrapperProps extends HTMLAttributes<HTMLDivElement> {
     margin?: string;
-    width?: number;
-    height?: number;
+    width?: string;
+    height?: string;
 }
 
 const Wrapper = forwardRef<HTMLDivElement, WrapperProps>((props, ref) => {

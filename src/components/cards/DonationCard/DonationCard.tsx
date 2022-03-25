@@ -7,6 +7,7 @@ import { Column } from '../../common/Layout/Column';
 import { Row } from '../../common/Layout/Row';
 import { Paragraph, ParagraphBlack2 } from '../../common/Text/Text.styles';
 import * as Styled from './DonationCard.styled';
+import { formatDistanceToNowStrict } from 'date-fns';
 
 interface DonationCardProps {
     name: string;
@@ -37,8 +38,8 @@ const DonationCard = ({ image, name, currency, timestamp }: DonationCardProps) =
                 src={image}
                 alt={name}
                 margin={`0 ${theme.spacing[4]} 0 0`}
-                width={40}
-                height={40}
+                width='40px'
+                height='40px'
                 isHovered={isHovered}
             />
 
@@ -52,7 +53,7 @@ const DonationCard = ({ image, name, currency, timestamp }: DonationCardProps) =
                 </ParagraphBlack2>
                 <Row>
                     <Paragraph color={isHovered ? 'hoverText2' : 'text2'}>
-                        {currency.amount} {currency.name}
+                        {currency.amount} {currency.name} • {formatDistanceToNowStrict(timestamp)}
                     </Paragraph>
                 </Row>
             </Column>

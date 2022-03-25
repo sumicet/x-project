@@ -6,6 +6,7 @@ import { ButtonColored, ButtonOutlineNeutral } from '../../components/common/But
 import Image from '../../components/common/Image/Image';
 import { Row } from '../../components/common/Layout/Row';
 import { Header1, Header3, Paragraph } from '../../components/common/Text/Text.styles';
+import FundraiserAssociate from '../../components/FundraiserAssociate/FundraiserAssociate';
 import Progress from '../../components/Progress/Progress';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import { fundraisers } from '../../data/mock';
@@ -69,6 +70,22 @@ const Fundraiser = ({}: FundraiserProps) => {
                     name={fundraiser?.category || null}
                     margin={`0 0 ${theme.spacing[6]} 0`}
                 />
+
+                <FundraiserAssociate
+                    type='Creator'
+                    username={fundraiser?.creator.username}
+                    walletAddress={fundraiser?.creator.walletAddress}
+                    image={fundraiser?.creator.image}
+                />
+                {fundraiser?.receiver && (
+                    <FundraiserAssociate
+                        type='Organized on behalf of'
+                        username={fundraiser?.receiver.username}
+                        walletAddress={fundraiser?.receiver.walletAddress}
+                        image={fundraiser?.receiver.image}
+                        margin={`${theme.spacing[5]} 0 0 0`}
+                    />
+                )}
             </Styled.StickyContainer>
         </Styled.Fundraiser>
     );

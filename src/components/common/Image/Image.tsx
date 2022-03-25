@@ -13,8 +13,8 @@ const StyledImage = styled.img<{ isHovered?: boolean }>`
 `;
 
 interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
-    width?: number;
-    height?: number;
+    width?: string;
+    height?: string;
     margin?: string;
     isHovered?: boolean;
 }
