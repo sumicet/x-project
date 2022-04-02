@@ -42,7 +42,7 @@ const BodyWrapper = ({ children }: BodyWrapperProps) => {
                             </Link>
                         </Styled.LogoContainer>
 
-                        <Link to='/discover'>
+                        <Link to='/'>
                             <ParagraphBlack1 margin='0 32px 0 0' className='text'>
                                 Discover
                             </ParagraphBlack1>

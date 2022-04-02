@@ -1,62 +1,58 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import React, { createContext, ReactNode, useCallback, useRef, useState } from 'react';
-import { useClickAway } from 'react-use';
-import DonateModal, { DonateModalProps } from './Modals/DonateModal';
+import { AnimatePresence } from 'framer-motion';
+import React, { createContext, useState } from 'react';
 
-interface ModalContextProps {
-    modal: ModalOptions;
-    setModal: React.Dispatch<React.SetStateAction<ModalOptions>> | null;
-    close: (() => void) | null;
-    open: (() => void) | null;
+interface ModalsContext {
+    isOpen: boolean;
+    nodeId: string;
+    modalNode: React.ReactNode;
+    setModalNode: React.Dispatch<React.SetStateAction<React.ReactNode>>;
+    onPresent: (node: React.ReactNode, newNodeId: string) => void;
+    onDismiss: () => void;
 }
 
-const initialOptions = { isOpen: false, variant: null, props: null };
-
-export const ModalContext = createContext<ModalContextProps>({
-    modal: initialOptions,
-    setModal: null,
-    close: null,
-    open: null,
+export const ModalContext = createContext<ModalsContext>({
+    isOpen: false,
+    nodeId: '',
+    modalNode: null,
+    setModalNode: () => null,
+    onPresent: () => null,
+    onDismiss: () => null,
 });
 
-export interface ModalOptions {
-    isOpen: boolean;
-    variant: 'donate' | null;
-    props: DonateModalProps | null;
-}
+const ModalProvider: React.FC = ({ children }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [modalNode, setModalNode] = useState<React.ReactNode>();
+    const [nodeId, setNodeId] = useState('');
 
-const ModalProvider = ({ children }: { children: ReactNode }) => {
-    const [modal, setModal] = useState<ModalOptions>(initialOptions);
+    const handlePresent = (node: React.ReactNode, newNodeId: string) => {
+        setModalNode(node);
+        setIsOpen(true);
+        setNodeId(newNodeId);
+    };
 
-    const ref = useRef<HTMLDivElement | null>(null);
-
-    const open = useCallback(() => setModal(op => ({ ...op, isOpen: true })), []);
-    const close = useCallback(() => setModal(op => ({ ...op, isOpen: false })), []);
-
-    useClickAway(ref, close);
+    const handleDismiss = () => {
+        setModalNode(undefined);
+        setIsOpen(false);
+        setNodeId('');
+    };
 
     return (
         <ModalContext.Provider
             value={{
-                modal,
-                open,
-                close,
-                setModal,
+                isOpen,
+                nodeId,
+                modalNode,
+                setModalNode,
+                onPresent: handlePresent,
+                onDismiss: handleDismiss,
             }}
         >
             <AnimatePresence>
-                {modal.isOpen && (
-                    <motion.div
-                        ref={ref}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                    >
-                        {modal.variant === 'donate' && (
-                            <DonateModal {...(modal.props as DonateModalProps)} />
-                        )}
-                    </motion.div>
-                )}
+                {isOpen &&
+                    React.isValidElement(modalNode) &&
+                    React.cloneElement(modalNode, {
+                        onDismiss: handleDismiss,
+                    })}
             </AnimatePresence>
             {children}
         </ModalContext.Provider>

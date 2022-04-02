@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useWindowSize } from 'react-use';
 import BodyWrapper from './components/BodyWrapper/BodyWrapper';
-import Discover from './pages/Discover/Discover';
+import Categories from './pages/Categories/Categories';
 import Fundraiser from './pages/Fundraiser/Fundraiser';
 import Home from './pages/Home/Home';
 import { useAppDispatch } from './redux/hooks';
@@ -27,7 +27,7 @@ const App = () => {
         <BodyWrapper>
             <Routes>
                 <Route path='/' element={<Home />} />
-                <Route path='/discover' element={<Discover />} />
+                <Route path='/categories' element={<Categories />} />
                 <Route path='/fundraiser/:id' element={<Fundraiser />} />
             </Routes>
         </BodyWrapper>

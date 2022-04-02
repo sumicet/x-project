@@ -2,23 +2,21 @@ import { useTheme } from 'styled-components';
 import { ButtonColored } from '../../common/Button/Button';
 import { Row } from '../../common/Layout/Row';
 import { ParagraphBlack2, ParagraphSmall } from '../../common/Text/Text.styles';
-import ModalWrapper, { ModalWrapperProps } from '../ModalWrapper';
-import { useModal } from '../useModal';
+import ModalBase, { ModalBaseProps } from '../ModalBase';
 import * as Styled from './DonateModal.styles';
 
-export interface DonateModalProps extends ModalWrapperProps {}
+export interface DonateModalProps extends ModalBaseProps {}
 
 const DonateModal = ({ ...props }: DonateModalProps) => {
     const theme = useTheme();
-
-    const { close } = useModal();
+    const { onDismiss } = props;
 
     const onSendClick = () => {
-        close && close();
+        onDismiss && onDismiss();
     };
 
     return (
-        <ModalWrapper {...props}>
+        <ModalBase {...props}>
             <Styled.DonateModal>
                 <Row margin={`0 0 ${theme.spacing[6]} 0`} className='row'>
                     <ParagraphBlack2 color='text1' margin={`0 ${theme.spacing[3]} 0 0`}>
@@ -57,7 +55,7 @@ const DonateModal = ({ ...props }: DonateModalProps) => {
                     <ButtonColored text='Send' className='stretch button' onClick={onSendClick} />
                 </Row>
             </Styled.DonateModal>
-        </ModalWrapper>
+        </ModalBase>
     );
 };
 

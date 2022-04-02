@@ -44,72 +44,54 @@ export const TextGradient = styled(Text)<{
 `;
 
 export const Header1 = styled(Text)<Props>`
-    /* color: ${props =>
-        (props.color && props.theme.color[props.color]) || props.theme.color.text1}; */
     font-size: ${props => props.theme.font.presets.header1.size};
     font-weight: ${props => props.theme.font.presets.header1.weight};
     font-family: ${props => props.theme.font.presets.header1.family};
 `;
 
 export const Header2 = styled(Text)<Props>`
-    /* color: ${props =>
-        (props.color && props.theme.color[props.color]) || props.theme.color.text1}; */
     font-size: ${props => props.theme.font.presets.header2.size};
     font-weight: ${props => props.theme.font.presets.header2.weight};
     font-family: ${props => props.theme.font.presets.header2.family};
 `;
 
 export const Header3 = styled(Text)<Props>`
-    /* color: ${props =>
-        (props.color && props.theme.color[props.color]) || props.theme.color.text1}; */
     font-size: ${props => props.theme.font.presets.header3.size};
     font-weight: ${props => props.theme.font.presets.header3.weight};
     font-family: ${props => props.theme.font.presets.header3.family};
 `;
 
 export const Paragraph = styled(Text)<Props>`
-    /* color: ${props =>
-        (props.color && props.theme.color[props.color]) || props.theme.color.text2}; */
     font-size: ${props => props.theme.font.presets.paragraph.size};
     font-weight: ${props => props.theme.font.presets.paragraph.weight};
     font-family: ${props => props.theme.font.presets.paragraph.family};
 `;
 
 export const ParagraphBig = styled(Text)<Props>`
-    /* color: ${props =>
-        (props.color && props.theme.color[props.color]) || props.theme.color.text2}; */
     font-size: ${props => props.theme.font.presets.paragraphBig.size};
     font-weight: ${props => props.theme.font.presets.paragraphBig.weight};
     font-family: ${props => props.theme.font.presets.paragraphBig.family};
 `;
 
 export const ParagraphBlack1 = styled(Text)<Props>`
-    /* color: ${props =>
-        (props.color && props.theme.color[props.color]) || props.theme.color.text1}; */
     font-size: ${props => props.theme.font.presets.paragraphBlack1.size};
     font-weight: ${props => props.theme.font.presets.paragraphBlack1.weight};
     font-family: ${props => props.theme.font.presets.paragraphBlack1.family};
 `;
 
 export const ParagraphBlack2 = styled(Text)<Props>`
-    /* color: ${props =>
-        (props.color && props.theme.color[props.color]) || props.theme.color.text1}; */
     font-size: ${props => props.theme.font.presets.paragraphBlack2.size};
     font-weight: ${props => props.theme.font.presets.paragraphBlack2.weight};
     font-family: ${props => props.theme.font.presets.paragraphBlack2.family};
 `;
 
 export const ParagraphBold = styled(Text)<Props>`
-    /* color: ${props =>
-        (props.color && props.theme.color[props.color]) || props.theme.color.text2}; */
     font-size: ${props => props.theme.font.presets.paragraphBold.size};
     font-weight: ${props => props.theme.font.presets.paragraphBold.weight};
     font-family: ${props => props.theme.font.presets.paragraphBold.family};
 `;
 
 export const ParagraphSmall = styled(Text)<Props>`
-    /* color: ${props =>
-        (props.color && props.theme.color[props.color]) || props.theme.color.text3}; */
     font-size: ${props => props.theme.font.presets.paragraphSmall.size};
     font-weight: ${props => props.theme.font.presets.paragraphSmall.weight};
     font-family: ${props => props.theme.font.presets.paragraphSmall.family};

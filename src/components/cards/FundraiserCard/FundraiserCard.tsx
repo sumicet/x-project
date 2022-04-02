@@ -68,7 +68,7 @@ const FundraiserCard = ({
                     color={isHovered ? 'hoverText1' : 'text1'}
                     margin={`0 0 ${theme.spacing[2]} 0`}
                 >
-                    {title}
+                    <TextRowEllipsis rows={1}>{title}</TextRowEllipsis>
                 </Header3>
 
                 <Styled.Description>
