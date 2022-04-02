@@ -57,8 +57,7 @@ export const fundraisers: Fundraiser[] = [
             username: 'Panda',
             walletAddress: '0xcf3AF0B1Aa5b6C143dcaf48Ff3C893C53744cD8C',
         },
-        description:
-            'Ukraine is facing an unprecedented, full-scale war. Media across the country continue to operate under the most challenging circumstances.',
+        description: 'Ukraine is facing an unprecedented, full-scale war.',
         receiver: {
             image: 'https://cdn.quotesgram.com/img/43/6/620194072-Baby-panda-giant-bucket-of-cute.jpg',
             username: 'ReceiverPanda',

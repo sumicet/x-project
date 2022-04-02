@@ -76,14 +76,16 @@ const FundraiserCard = ({
                     </Paragraph>
                 </Styled.Description>
 
-                <ParagraphBlack1
-                    color={isHovered ? 'hoverText1' : 'text1'}
-                    className='one-line'
-                    margin={`0 0 ${theme.spacing[3]} 0`}
-                >
-                    Raised <TextGradient>{parseFloat(collected).toLocaleString()}</TextGradient> out
-                    of {parseFloat(goal).toLocaleString()} {config.fiatCurrency}
-                </ParagraphBlack1>
+                <div>
+                    <ParagraphBlack1
+                        color={isHovered ? 'hoverText1' : 'text1'}
+                        className='one-line'
+                        margin={`0 0 ${theme.spacing[3]} 0`}
+                    >
+                        Raised <TextGradient>{parseFloat(collected).toLocaleString()}</TextGradient>{' '}
+                        out of {parseFloat(goal).toLocaleString()} {config.fiatCurrency}
+                    </ParagraphBlack1>
+                </div>
 
                 <Category name={category} />
             </Styled.FundraiserCard>
