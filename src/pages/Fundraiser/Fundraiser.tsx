@@ -5,6 +5,7 @@ import Category from '../../components/Category/Category';
 import { ButtonColored, ButtonOutlineNeutral } from '../../components/common/Button/Button';
 import Image from '../../components/common/Image/Image';
 import { Row } from '../../components/common/Layout/Row';
+import SquareImage from '../../components/common/SquareImage/SquareImage';
 import { Header1, Header3, Paragraph } from '../../components/common/Text/Text.styles';
 import FundraiserAssociate from '../../components/FundraiserAssociate/FundraiserAssociate';
 import Progress from '../../components/Progress/Progress';
@@ -23,7 +24,7 @@ const Fundraiser = ({}: FundraiserProps) => {
     return (
         <Styled.Fundraiser>
             <Styled.Container>
-                <Image src={fundraiser?.image} margin={`0 0 ${theme.spacing[6]} 0`} />
+                <SquareImage src={fundraiser?.image} margin={`0 0 ${theme.spacing[6]} 0`} />
                 <Paragraph color='text2' lineHeight={1.2}>
                     {fundraiser?.body}
                 </Paragraph>

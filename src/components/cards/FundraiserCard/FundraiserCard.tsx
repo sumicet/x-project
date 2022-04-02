@@ -6,6 +6,7 @@ import { FundraiserCategory } from '../../../redux/apis/fundraisers/types';
 import { theme } from '../../../theme/default';
 import Category from '../../Category/Category';
 import Image from '../../common/Image/Image';
+import SquareImage from '../../common/SquareImage/SquareImage';
 import {
     Header3,
     Paragraph,
@@ -40,8 +41,6 @@ const FundraiserCard = ({
     const [ref, { width }] = useMeasure<HTMLDivElement>();
     const [isHovered, setIsHovered] = useState<boolean>(false);
 
-    console.log(width);
-
     const handleStartHover = useCallback(() => setIsHovered(true), []);
 
     const handleStopHover = useCallback(() => setIsHovered(false), []);
@@ -55,15 +54,12 @@ const FundraiserCard = ({
                 onTouchStart={handleStartHover}
                 onTouchEnd={handleStopHover}
             >
-                <Image
+                <SquareImage
                     src={image}
                     alt={title}
-                    margin={`0 0 ${theme.spacing[4]} 0`}
-                    width={`${width}px`}
-                    height={`${width}px`}
                     isHovered={isHovered}
+                    margin={`0 0 ${theme.spacing[4]} 0`}
                 />
-
                 <Header3
                     color={isHovered ? 'hoverText1' : 'text1'}
                     margin={`0 0 ${theme.spacing[2]} 0`}
