@@ -25,7 +25,7 @@ export const Link = ({ to, children, color = 'text1', colorHover = 'hoverText1' 
     }
 
     return (
-        <RouterLink to={{ pathname: to }}>
+        <RouterLink to={{ pathname: to }} style={{ display: 'flex' }}>
             <StyledLink color={color} colorHover={colorHover}>
                 {children}
             </StyledLink>

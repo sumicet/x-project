@@ -12,9 +12,10 @@ interface ProgressProps {
     goal: string | null;
     currencies: Currency[] | null;
     currenciesCount: string | null;
+    margin?: string;
 }
 
-const Progress = ({ collected, goal, currencies, currenciesCount }: ProgressProps) => {
+const Progress = ({ collected, goal, currencies, currenciesCount, margin }: ProgressProps) => {
     const theme = useTheme();
 
     const currenciesNotVisible = useMemo(
@@ -23,7 +24,7 @@ const Progress = ({ collected, goal, currencies, currenciesCount }: ProgressProp
     );
 
     return (
-        <Styled.Progress>
+        <Styled.Progress style={{ margin }}>
             <ProgressBar margin={`0 0 ${theme.spacing[4]} 0`} />
             <Row margin={`0 0 ${theme.spacing[1]} 0`}>
                 {collected && (
@@ -37,7 +38,7 @@ const Progress = ({ collected, goal, currencies, currenciesCount }: ProgressProp
                     </Header3>
                 )}
             </Row>
-            <Row margin={`0 0 ${theme.spacing[6]} 0`}>
+            <Row>
                 {currencies && currencies.length > 0 && (
                     <>
                         <ParagraphSmall color='text3' className='same-line'>

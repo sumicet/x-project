@@ -74,6 +74,11 @@ const BodyWrapper = ({ children }: BodyWrapperProps) => {
                     </>
                 ) : (
                     <>
+                        <Styled.LogoContainer>
+                            <Link to='/'>
+                                <Logo />
+                            </Link>
+                        </Styled.LogoContainer>
                         <IconContainer>
                             <MobileMenu />
                         </IconContainer>

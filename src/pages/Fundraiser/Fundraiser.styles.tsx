@@ -6,20 +6,34 @@ type FundraiserProps = {};
 export const Fundraiser = styled.div<FundraiserProps>`
     display: flex;
     flex: 1;
-    position: relative;
+    flex-direction: column;
+
+    ${props => props.theme.mediaQuery.md} {
+        flex-direction: row;
+    }
 `;
 
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    width: 50%;
     margin: 0 ${props => props.theme.spacing[6]} 0 0;
+    width: 100%;
+
+    ${props => props.theme.mediaQuery.md} {
+        width: 50%;
+    }
 `;
 
 export const StickyContainer = styled.div`
-    position: sticky;
-    height: 100%;
-    width: 50%;
+    width: 100%;
+    height: fit-content;
+
+    ${props => props.theme.mediaQuery.md} {
+        width: 50%;
+        position: sticky;
+        right: 0;
+        top: ${props => props.theme.spacing[6]};
+    }
 `;
 
 export const DonationCardGrid = styled.div`
