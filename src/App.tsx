@@ -2,7 +2,9 @@ import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useWindowSize } from 'react-use';
 import BodyWrapper from './components/BodyWrapper/BodyWrapper';
+import About from './pages/About/About';
 import Categories from './pages/Categories/Categories';
+import Contact from './pages/Contact/Contact';
 import Fundraiser from './pages/Fundraiser/Fundraiser';
 import Home from './pages/Home/Home';
 import { useAppDispatch } from './redux/hooks';
@@ -29,6 +31,8 @@ const App = () => {
                 <Route path='/' element={<Home />} />
                 <Route path='/categories' element={<Categories />} />
                 <Route path='/fundraiser/:id' element={<Fundraiser />} />
+                <Route path='/about' element={<About />} />
+                <Route path='/contact' element={<Contact />} />
             </Routes>
         </BodyWrapper>
     );

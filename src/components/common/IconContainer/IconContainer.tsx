@@ -3,10 +3,11 @@ import * as Styled from './IconContainer.styles';
 
 interface IconContainerProps {
     children: ReactNode;
+    variant: 'outline' | 'fill';
 }
 
-const IconContainer = ({ children }: IconContainerProps) => {
-    return <Styled.IconContainer>{children}</Styled.IconContainer>;
+const IconContainer = ({ variant, children }: IconContainerProps) => {
+    return <Styled.IconContainer variant={variant}>{children}</Styled.IconContainer>;
 };
 
 export default IconContainer;

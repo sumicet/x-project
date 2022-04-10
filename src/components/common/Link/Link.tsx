@@ -21,7 +21,11 @@ const StyledLink = styled.span<{ color: Color; colorHover: Color }>`
 
 export const Link = ({ to, children, color = 'text1', colorHover = 'hoverText1' }: LinkProps) => {
     if (to.includes('https://')) {
-        return <a href={to}>{children}</a>;
+        return (
+            <a href={to} target='_blank' rel='noreferrer'>
+                {children}
+            </a>
+        );
     }
 
     return (

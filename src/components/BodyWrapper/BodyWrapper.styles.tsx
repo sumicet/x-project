@@ -14,11 +14,11 @@ export const BodyWrapper = styled.div<BodyWrapperProps>`
     align-items: center;
 `;
 
-export const PageWrapper = styled.div`
+export const PageWrapper = styled.div<{ stretch?: boolean }>`
     max-width: ${props => `calc(1400px + ${props.theme.spacing[4]} * 2)`};
     width: 100%;
     display: flex;
-    flex: 1;
+    ${props => props.stretch && `flex: 1`};
 
     padding: ${props => `0px ${props.theme.spacing[4]}`};
 `;
@@ -62,17 +62,4 @@ export const LogoContainer = styled.div`
     ${props => props.theme.mediaQuery.md} {
         margin-right: ${props => props.theme.spacing[7]};
     }
-`;
-
-export const Footer = styled.div`
-    padding: ${props => `${props.theme.spacing[6]} ${props.theme.spacing[4]}`};
-
-    ${props => props.theme.mediaQuery.md} {
-        padding: ${props => `${props.theme.spacing[7]} ${props.theme.spacing[6]}`};
-    }
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
 `;

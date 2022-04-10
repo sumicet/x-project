@@ -11,6 +11,7 @@ import { formatWalletAddress } from '../../utils/common';
 import { theme } from '../../theme/default';
 import IconContainer from '../common/IconContainer/IconContainer';
 import MobileMenu from '../../assets/images/components/MobileMenu';
+import Footer from '../Footer/Footer';
 
 interface BodyWrapperProps {
     children: ReactNode;
@@ -79,23 +80,16 @@ const BodyWrapper = ({ children }: BodyWrapperProps) => {
                                 <Logo />
                             </Link>
                         </Styled.LogoContainer>
-                        <IconContainer>
+                        <IconContainer variant='outline'>
                             <MobileMenu />
                         </IconContainer>
                     </>
                 )}
             </Styled.Menu>
-            <Styled.PageWrapper>{children}</Styled.PageWrapper>
-            <Styled.Footer>
-                <Styled.LogoContainer>
-                    <Link to='/'>
-                        <Logo />
-                    </Link>
-                </Styled.LogoContainer>
-                <Text variant='paragraphBlack1' color='text1'>
-                    @Footer
-                </Text>
-            </Styled.Footer>
+            <Styled.PageWrapper stretch>{children}</Styled.PageWrapper>
+            <Styled.PageWrapper>
+                <Footer />
+            </Styled.PageWrapper>
         </Styled.BodyWrapper>
     );
 };
