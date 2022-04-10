@@ -138,11 +138,11 @@ const Fundraiser = ({}: FundraiserProps) => {
                 variant='paragraph'
                 color='text2'
                 lineHeight={1.2}
-                margin={`0 0 ${theme.spacing[5]} 0`}
+                margin={`0 0 ${theme.spacing[6]} 0`}
             >
                 {fundraiser?.description}
             </Text>
-            <Column margin={`0 0 ${theme.spacing[5]} 0`}>
+            <Column margin={`0 0 ${theme.spacing[6]} 0`}>
                 <FundraiserAssociate
                     type='Creator'
                     username={fundraiser?.creator.username}
@@ -164,7 +164,7 @@ const Fundraiser = ({}: FundraiserProps) => {
                 variant='paragraph'
                 color='text2'
                 lineHeight={1.2}
-                margin={`0 0 ${theme.spacing[5]} 0`}
+                margin={`0 0 ${theme.spacing[6]} 0`}
             >
                 {fundraiser?.body}
             </Text>
