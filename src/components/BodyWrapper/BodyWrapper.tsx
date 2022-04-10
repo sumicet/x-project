@@ -2,7 +2,7 @@ import { ReactNode, useCallback, useEffect } from 'react';
 import * as Styled from './BodyWrapper.styles';
 // @ts-ignore
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
-import { ParagraphBlack1 } from '../common/Text/Text.styles';
+import { Text } from '../common/Text/Text.styles';
 import Input from '../common/Input/Input';
 import { ButtonOutlineColored } from '../common/Button/Button';
 import { Link } from '../common/Link/Link';
@@ -42,24 +42,24 @@ const BodyWrapper = ({ children }: BodyWrapperProps) => {
                             </Link>
                         </Styled.LogoContainer>
 
-                        <Link to='/discover'>
-                            <ParagraphBlack1 margin='0 32px 0 0' className='text'>
+                        <Link to='/'>
+                            <Text variant='paragraphBlack1' margin='0 32px 0 0' className='text'>
                                 Discover
-                            </ParagraphBlack1>
+                            </Text>
                         </Link>
 
                         <Link to='/categories'>
-                            <ParagraphBlack1 margin='0 32px 0 0' className='text'>
+                            <Text variant='paragraphBlack1' margin='0 32px 0 0' className='text'>
                                 Categories
-                            </ParagraphBlack1>
+                            </Text>
                         </Link>
 
                         <Input placeholder='Search...' margin='0 32px 0 0' className='input' />
 
                         <Link to='/how-it-works'>
-                            <ParagraphBlack1 margin='0 32px 0 0' className='text'>
+                            <Text variant='paragraphBlack1' margin='0 32px 0 0' className='text'>
                                 How it works
-                            </ParagraphBlack1>
+                            </Text>
                         </Link>
 
                         <div className='connect-button-container'>
@@ -74,6 +74,11 @@ const BodyWrapper = ({ children }: BodyWrapperProps) => {
                     </>
                 ) : (
                     <>
+                        <Styled.LogoContainer>
+                            <Link to='/'>
+                                <Logo />
+                            </Link>
+                        </Styled.LogoContainer>
                         <IconContainer>
                             <MobileMenu />
                         </IconContainer>
@@ -87,7 +92,9 @@ const BodyWrapper = ({ children }: BodyWrapperProps) => {
                         <Logo />
                     </Link>
                 </Styled.LogoContainer>
-                <ParagraphBlack1 color='text1'>@Footer</ParagraphBlack1>
+                <Text variant='paragraphBlack1' color='text1'>
+                    @Footer
+                </Text>
             </Styled.Footer>
         </Styled.BodyWrapper>
     );

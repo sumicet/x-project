@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FundraiserCategory } from '../../redux/apis/fundraisers/types';
 import { getCategoryPath } from '../../utils/common';
-import { ParagraphBlack2 } from '../common/Text/Text.styles';
+import { Text } from '../common/Text/Text.styles';
 import * as Styled from './Category.styles';
 
 interface CategoryProps {
@@ -14,7 +14,7 @@ const Category = ({ name, margin }: CategoryProps) => {
         <div style={{ margin }}>
             <Link to={{ pathname: name ? `/${getCategoryPath(name)}` : '' }}>
                 <Styled.Category>
-                    <ParagraphBlack2>{name}</ParagraphBlack2>
+                    <Text variant='paragraphBlack2'>{name}</Text>
                 </Styled.Category>
             </Link>
         </div>

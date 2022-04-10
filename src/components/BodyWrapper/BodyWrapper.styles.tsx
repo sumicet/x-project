@@ -54,7 +54,14 @@ export const Menu = styled.div`
 `;
 
 export const LogoContainer = styled.div`
-    margin-right: ${props => props.theme.spacing[7]};
+    flex: 1;
+    display: flex;
+    align-items: center;
+    max-height: 33px;
+
+    ${props => props.theme.mediaQuery.md} {
+        margin-right: ${props => props.theme.spacing[7]};
+    }
 `;
 
 export const Footer = styled.div`

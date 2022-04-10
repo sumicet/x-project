@@ -1,7 +1,7 @@
-import { Header1 } from '../../components/common/Text/Text.styles';
+import { Text } from '../../components/common/Text/Text.styles';
 
 const HowItWorks = () => {
-    return <Header1>HowItWorks</Header1>;
+    return <Text variant='header1'>HowItWorks</Text>;
 };
 
 export default HowItWorks;

@@ -1,9 +1,3 @@
-import {
-    ButtonColored,
-    ButtonOutlineColored,
-    ButtonOutlineNeutral,
-} from '../../components/common/Button/Button';
-import { Header1 } from '../../components/common/Text/Text.styles';
 import FundraiserCard from '../../components/cards/FundraiserCard/FundraiserCard';
 import { fundraisers } from '../../data/mock';
 import * as Styled from './Home.styled';

@@ -1,17 +1,18 @@
-import { ReactNode } from 'react';
+import { ReactNode, useRef } from 'react';
+import { useClickAway } from 'react-use';
 import styled, { useTheme } from 'styled-components';
-import { Header2 } from '../common/Text/Text.styles';
+import { Text } from '../common/Text/Text.styles';
 
-export interface ModalWrapperProps {
+export interface ModalBaseProps {
     title: string;
     onDismiss?: () => void;
 }
 
-interface LocalModalWrapperProps extends ModalWrapperProps {
+interface LocalModalBaseProps extends ModalBaseProps {
     children: ReactNode;
 }
 
-const StyledModalWrapper = styled.div`
+const StyledModalBase = styled.div`
     position: fixed;
     inset: 0;
     border-radius: ${props => props.theme.borderRadius};
@@ -36,20 +37,25 @@ const StyledModalHeader = styled.div`
     justify-content: center;
 `;
 
-const ModalWrapper = ({ title, onDismiss, children }: LocalModalWrapperProps) => {
+const ModalBase = ({ title, onDismiss, children }: LocalModalBaseProps) => {
     const theme = useTheme();
+    const ref = useRef<HTMLDivElement>(null);
+
+    useClickAway(ref, () => {
+        onDismiss && onDismiss();
+    });
 
     return (
-        <StyledModalWrapper>
+        <StyledModalBase ref={ref}>
             <StyledModalHeader>
-                <Header2 color='text1' margin={`0 0 ${theme.spacing[6]} 0`}>
+                <Text variant='header2' color='text1' margin={`0 0 ${theme.spacing[6]} 0`}>
                     {title}
-                </Header2>
+                </Text>
             </StyledModalHeader>
 
             {children}
-        </StyledModalWrapper>
+        </StyledModalBase>
     );
 };
 
-export default ModalWrapper;
+export default ModalBase;

@@ -12,7 +12,7 @@ const StyledImage = styled.img<{ isHovered?: boolean }>`
     ${props => props.theme.animation.transition.default('transform')};
 `;
 
-interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
+export interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
     width?: string;
     height?: string;
     margin?: string;

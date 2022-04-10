@@ -11,6 +11,42 @@ export const fundraisers: Fundraiser[] = [
          
         Flexport.org is organizing shipments of relief supplies to refugee sites in Poland, Romania, Hungary, Slovakia and Moldova.
          
+        Airbnb.org is providing free, short-term housing to refugees fleeing Ukraine.
+        Our family is starting this fund to help provide immediate support and we will be matching up to $3 million dollars.
+ 
+        While we are witnessing the bravery of Ukrainians, we are also bearing witness to the unimaginable burden of those who have chosen safety. Countless amounts of people have left everything they know and love behind to seek refuge. With nothing but what they could carry, these Ukrainian refugees are in need of housing and supplies right away.
+         
+        Through GoFundMe.org, this fundraiser will provide an immediate impact on refugee and humanitarian aid efforts. The fund will benefit Flexport.org and Airbnb.org, two organizations who are actively on the ground providing immediate help to those who need it most.
+         
+        Flexport.org is organizing shipments of relief supplies to refugee sites in Poland, Romania, Hungary, Slovakia and Moldova.
+         
+        Airbnb.org is providing free, short-term housing to refugees fleeing Ukraine.
+        Our family is starting this fund to help provide immediate support and we will be matching up to $3 million dollars.
+ 
+        While we are witnessing the bravery of Ukrainians, we are also bearing witness to the unimaginable burden of those who have chosen safety. Countless amounts of people have left everything they know and love behind to seek refuge. With nothing but what they could carry, these Ukrainian refugees are in need of housing and supplies right away.
+         
+        Through GoFundMe.org, this fundraiser will provide an immediate impact on refugee and humanitarian aid efforts. The fund will benefit Flexport.org and Airbnb.org, two organizations who are actively on the ground providing immediate help to those who need it most.
+         
+        Flexport.org is organizing shipments of relief supplies to refugee sites in Poland, Romania, Hungary, Slovakia and Moldova.
+         
+        Airbnb.org is providing free, short-term housing to refugees fleeing Ukraine.
+        Our family is starting this fund to help provide immediate support and we will be matching up to $3 million dollars.
+ 
+        While we are witnessing the bravery of Ukrainians, we are also bearing witness to the unimaginable burden of those who have chosen safety. Countless amounts of people have left everything they know and love behind to seek refuge. With nothing but what they could carry, these Ukrainian refugees are in need of housing and supplies right away.
+         
+        Through GoFundMe.org, this fundraiser will provide an immediate impact on refugee and humanitarian aid efforts. The fund will benefit Flexport.org and Airbnb.org, two organizations who are actively on the ground providing immediate help to those who need it most.
+         
+        Flexport.org is organizing shipments of relief supplies to refugee sites in Poland, Romania, Hungary, Slovakia and Moldova.
+         
+        Airbnb.org is providing free, short-term housing to refugees fleeing Ukraine.
+        Our family is starting this fund to help provide immediate support and we will be matching up to $3 million dollars.
+ 
+        While we are witnessing the bravery of Ukrainians, we are also bearing witness to the unimaginable burden of those who have chosen safety. Countless amounts of people have left everything they know and love behind to seek refuge. With nothing but what they could carry, these Ukrainian refugees are in need of housing and supplies right away.
+         
+        Through GoFundMe.org, this fundraiser will provide an immediate impact on refugee and humanitarian aid efforts. The fund will benefit Flexport.org and Airbnb.org, two organizations who are actively on the ground providing immediate help to those who need it most.
+         
+        Flexport.org is organizing shipments of relief supplies to refugee sites in Poland, Romania, Hungary, Slovakia and Moldova.
+         
         Airbnb.org is providing free, short-term housing to refugees fleeing Ukraine.`,
         category: 'Emergency',
         creator: {
@@ -57,8 +93,7 @@ export const fundraisers: Fundraiser[] = [
             username: 'Panda',
             walletAddress: '0xcf3AF0B1Aa5b6C143dcaf48Ff3C893C53744cD8C',
         },
-        description:
-            'Ukraine is facing an unprecedented, full-scale war. Media across the country continue to operate under the most challenging circumstances.',
+        description: 'Ukraine is facing an unprecedented, full-scale war.',
         receiver: {
             image: 'https://cdn.quotesgram.com/img/43/6/620194072-Baby-panda-giant-bucket-of-cute.jpg',
             username: 'ReceiverPanda',

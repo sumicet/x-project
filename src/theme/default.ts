@@ -1,6 +1,8 @@
+// Focus on screen of width >= 320px
+// https://worship.agency/mobile-screen-sizes-for-2021
 const breakpoint = {
     xs: 370,
-    sm: 576,
+    sm: 500,
     md: 852,
     lg: 968,
     xl: 1080,
@@ -127,3 +129,4 @@ export type FontSize = keyof typeof theme.font.size;
 export type FontWeight = keyof typeof theme.font.weight;
 export type FontFamily = keyof typeof theme.font.family;
 export type Spacing = keyof typeof theme.spacing;
+export type FontPresets = keyof typeof theme.font.presets;
