@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Color, Spacing } from '../../../theme/default';
 import { HTMLProps } from '../../../types/default';
-import { ParagraphBlack2, TextGradient } from '../Text/Text.styles';
+import { Text, TextGradient } from '../Text/Text.styles';
 
 interface BaseProps extends Omit<HTMLProps<HTMLButtonElement>, 'ref' | 'color'> {
     padding?: Spacing;
@@ -82,7 +82,9 @@ interface ButtonProps extends BaseProps {
 export const ButtonColored = ({ text, ...props }: ButtonProps) => {
     return (
         <ButtonBaseColored {...props}>
-            <ParagraphBlack2 color='neutralMedium2'>{text}</ParagraphBlack2>
+            <Text variant='paragraphBlack2' color='neutralMedium2'>
+                {text}
+            </Text>
         </ButtonBaseColored>
     );
 };
@@ -91,9 +93,9 @@ export const ButtonOutlineColored = ({ text, margin, ...props }: ButtonProps) =>
     return (
         <ButtonOutlineColoredBaseContainer style={{ margin }}>
             <ButtonOutlineColoredBase {...props}>
-                <ParagraphBlack2>
+                <Text variant='paragraphBlack2'>
                     <TextGradient>{text}</TextGradient>
-                </ParagraphBlack2>
+                </Text>
             </ButtonOutlineColoredBase>
         </ButtonOutlineColoredBaseContainer>
     );
@@ -102,7 +104,9 @@ export const ButtonOutlineColored = ({ text, margin, ...props }: ButtonProps) =>
 export const ButtonOutlineNeutral = ({ text, ...props }: ButtonProps) => {
     return (
         <ButtonOutlineNeutralBase {...props}>
-            <ParagraphBlack2 color='text1'>{text}</ParagraphBlack2>
+            <Text variant='paragraphBlack2' color='text1'>
+                {text}
+            </Text>
         </ButtonOutlineNeutralBase>
     );
 };

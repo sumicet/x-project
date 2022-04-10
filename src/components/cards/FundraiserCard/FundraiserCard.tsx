@@ -5,15 +5,8 @@ import { config } from '../../../config';
 import { FundraiserCategory } from '../../../redux/apis/fundraisers/types';
 import { theme } from '../../../theme/default';
 import Category from '../../Category/Category';
-import Image from '../../common/Image/Image';
 import SquareImage from '../../common/SquareImage/SquareImage';
-import {
-    Header3,
-    Paragraph,
-    ParagraphBlack1,
-    TextGradient,
-    TextRowEllipsis,
-} from '../../common/Text/Text.styles';
+import { Text, TextGradient, TextRowEllipsis } from '../../common/Text/Text.styles';
 import * as Styled from './FundraiserCard.styled';
 
 interface FundraiserCardProps {
@@ -60,31 +53,34 @@ const FundraiserCard = ({
                     isHovered={isHovered}
                     margin={`0 0 ${theme.spacing[4]} 0`}
                 />
-                <Header3
+                <Text
+                    variant='header3'
                     color={isHovered ? 'hoverText1' : 'text1'}
                     margin={`0 0 ${theme.spacing[2]} 0`}
                 >
                     <TextRowEllipsis rows={1}>{title}</TextRowEllipsis>
-                </Header3>
+                </Text>
 
                 <Styled.Description>
-                    <Paragraph
+                    <Text
+                        variant='paragraph'
                         color={isHovered ? 'hoverText2' : 'text2'}
                         margin={`0 0 ${theme.spacing[3]} 0`}
                     >
                         <TextRowEllipsis rows={3}>{description}</TextRowEllipsis>
-                    </Paragraph>
+                    </Text>
                 </Styled.Description>
 
                 <div>
-                    <ParagraphBlack1
+                    <Text
+                        variant='paragraphBlack1'
                         color={isHovered ? 'hoverText1' : 'text1'}
                         className='one-line'
                         margin={`0 0 ${theme.spacing[3]} 0`}
                     >
                         Raised <TextGradient>{parseFloat(collected).toLocaleString()}</TextGradient>{' '}
                         out of {parseFloat(goal).toLocaleString()} {config.fiatCurrency}
-                    </ParagraphBlack1>
+                    </Text>
                 </div>
 
                 <Category name={category} />

@@ -5,7 +5,7 @@ import Image from '../common/Image/Image';
 import { Column } from '../common/Layout/Column';
 import { Right } from '../common/Layout/Right';
 import { Row } from '../common/Layout/Row';
-import { Paragraph, ParagraphBlack1, ParagraphBlack2 } from '../common/Text/Text.styles';
+import { Text } from '../common/Text/Text.styles';
 import * as Styled from './FundraiserAssociate.styles';
 import { formatWalletAddress } from '../../utils/common';
 import { useAppSelector } from '../../redux/hooks';
@@ -35,9 +35,9 @@ const FundraiserAssociate = ({
     return (
         <Styled.FundraiserAssociate style={{ margin }}>
             <Row className='align-middle wrapper'>
-                <ParagraphBlack1 color='text1' className='stretch'>
+                <Text variant='paragraphBlack1' color='text1' className='stretch'>
                     {type}
-                </ParagraphBlack1>
+                </Text>
 
                 <Row
                     className='align-middle'
@@ -55,19 +55,27 @@ const FundraiserAssociate = ({
                     <Column>
                         {!isMobile ? (
                             <Right>
-                                <ParagraphBlack2 color='text1' margin={`0 0 ${theme.spacing[2]} 0`}>
+                                <Text
+                                    variant='paragraphBlack2'
+                                    color='text1'
+                                    margin={`0 0 ${theme.spacing[2]} 0`}
+                                >
                                     {username}
-                                </ParagraphBlack2>
+                                </Text>
                             </Right>
                         ) : (
-                            <ParagraphBlack2 color='text1' margin={`0 0 ${theme.spacing[2]} 0`}>
+                            <Text
+                                variant='paragraphBlack2'
+                                color='text1'
+                                margin={`0 0 ${theme.spacing[2]} 0`}
+                            >
                                 {username}
-                            </ParagraphBlack2>
+                            </Text>
                         )}
 
-                        <Paragraph color='text2'>
+                        <Text variant='paragraph' color='text2'>
                             {walletAddress && formatWalletAddress(walletAddress)} • London, UK
-                        </Paragraph>
+                        </Text>
                     </Column>
                     {!isMobile && (
                         <Image

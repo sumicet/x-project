@@ -1,7 +1,7 @@
 import { ReactNode, useRef } from 'react';
 import { useClickAway } from 'react-use';
 import styled, { useTheme } from 'styled-components';
-import { Header2 } from '../common/Text/Text.styles';
+import { Text } from '../common/Text/Text.styles';
 
 export interface ModalBaseProps {
     title: string;
@@ -48,9 +48,9 @@ const ModalBase = ({ title, onDismiss, children }: LocalModalBaseProps) => {
     return (
         <StyledModalBase ref={ref}>
             <StyledModalHeader>
-                <Header2 color='text1' margin={`0 0 ${theme.spacing[6]} 0`}>
+                <Text variant='header2' color='text1' margin={`0 0 ${theme.spacing[6]} 0`}>
                     {title}
-                </Header2>
+                </Text>
             </StyledModalHeader>
 
             {children}

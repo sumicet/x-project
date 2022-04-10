@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { ButtonColored } from '../../components/common/Button/Button';
-import { Header1 } from '../../components/common/Text/Text.styles';
+import { Text } from '../../components/common/Text/Text.styles';
 import useModal from '../../components/Modal/useModal';
 import DonationModal from '../../components/Modal/Modals/DonateModal';
 
@@ -13,7 +13,9 @@ const Categories = () => {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <Header1 color='text1'>Categories</Header1>
+            <Text variant='header1' color='text1'>
+                Categories
+            </Text>
 
             <ButtonColored text='open' onClick={onOpenClick} />
         </div>

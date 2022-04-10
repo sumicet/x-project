@@ -1,17 +1,14 @@
 import { useParams } from 'react-router-dom';
-import { useWindowSize } from 'react-use';
 import { useTheme } from 'styled-components';
 import DonationCard from '../../components/cards/DonationCard/DonationCard';
 import Category from '../../components/Category/Category';
 import { ButtonColored, ButtonOutlineNeutral } from '../../components/common/Button/Button';
-import Image from '../../components/common/Image/Image';
 import { Column } from '../../components/common/Layout/Column';
 import { Row } from '../../components/common/Layout/Row';
 import SquareImage from '../../components/common/SquareImage/SquareImage';
-import { Header1, Header2, Header3, Paragraph } from '../../components/common/Text/Text.styles';
+import { Text } from '../../components/common/Text/Text.styles';
 import FundraiserAssociate from '../../components/FundraiserAssociate/FundraiserAssociate';
 import Progress from '../../components/Progress/Progress';
-import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import { fundraisers } from '../../data/mock';
 import { useAppSelector } from '../../redux/hooks';
 import * as Styled from './Fundraiser.styles';
@@ -33,14 +30,19 @@ const Fundraiser = ({}: FundraiserProps) => {
                 <Styled.Container>
                     {' '}
                     <SquareImage src={fundraiser?.image} margin={`0 0 ${theme.spacing[6]} 0`} />
-                    <Paragraph color='text2' lineHeight={1.2}>
+                    <Text variant='paragraph' color='text2' lineHeight={1.2}>
                         {fundraiser?.body}
-                    </Paragraph>
+                    </Text>
                 </Styled.Container>
                 <Styled.StickyContainer>
-                    <Header1 color='text1' margin={`0 0 ${theme.spacing[6]} 0`}>
+                    <Text
+                        variant='header1'
+                        lineHeight={1.2}
+                        color='text1'
+                        margin={`0 0 ${theme.spacing[6]} 0`}
+                    >
                         {fundraiser?.title}
-                    </Header1>
+                    </Text>
                     <Progress
                         collected={fundraiser?.funds.collected || null}
                         goal={fundraiser?.funds.goal || null}
@@ -50,9 +52,14 @@ const Fundraiser = ({}: FundraiserProps) => {
                         }
                         margin={`0 0 ${theme.spacing[6]} 0`}
                     />
-                    <Paragraph color='text2' lineHeight={1.2} margin={`0 0 ${theme.spacing[6]} 0`}>
+                    <Text
+                        variant='paragraph'
+                        color='text2'
+                        lineHeight={1.2}
+                        margin={`0 0 ${theme.spacing[6]} 0`}
+                    >
                         {fundraiser?.description}
-                    </Paragraph>
+                    </Text>
                     <Row margin={`0 0 ${theme.spacing[5]} 0`}>
                         <ButtonColored
                             text='Donate'
@@ -61,9 +68,9 @@ const Fundraiser = ({}: FundraiserProps) => {
                         />
                         <ButtonOutlineNeutral text='Share' className='stretch' />
                     </Row>
-                    <Header3 color='text1' margin={`0 0 ${theme.spacing[6]} 0`}>
+                    <Text variant='header3' color='text1' margin={`0 0 ${theme.spacing[6]} 0`}>
                         Top donations
-                    </Header3>
+                    </Text>
 
                     <Styled.DonationCardGrid>
                         {[1, 2, 3, 4].map(() => (
@@ -104,13 +111,13 @@ const Fundraiser = ({}: FundraiserProps) => {
         <Styled.Fundraiser>
             <SquareImage src={fundraiser?.image} margin={`0 0 ${theme.spacing[5]} 0`} />
             {!isMobile ? (
-                <Header1 color='text1' margin={`0 0 ${theme.spacing[5]} 0`}>
+                <Text variant='header1' color='text1' margin={`0 0 ${theme.spacing[5]} 0`}>
                     {fundraiser?.title}
-                </Header1>
+                </Text>
             ) : (
-                <Header2 color='text1' margin={`0 0 ${theme.spacing[5]} 0`}>
+                <Text variant='header2' color='text1' margin={`0 0 ${theme.spacing[5]} 0`}>
                     {fundraiser?.title}
-                </Header2>
+                </Text>
             )}
             <Progress
                 collected={fundraiser?.funds.collected || null}
@@ -127,9 +134,14 @@ const Fundraiser = ({}: FundraiserProps) => {
                 />
                 <ButtonOutlineNeutral text='Share' className='stretch' />
             </Row>
-            <Paragraph color='text2' lineHeight={1.2} margin={`0 0 ${theme.spacing[5]} 0`}>
+            <Text
+                variant='paragraph'
+                color='text2'
+                lineHeight={1.2}
+                margin={`0 0 ${theme.spacing[5]} 0`}
+            >
                 {fundraiser?.description}
-            </Paragraph>
+            </Text>
             <Column margin={`0 0 ${theme.spacing[5]} 0`}>
                 <FundraiserAssociate
                     type='Creator'
@@ -148,13 +160,18 @@ const Fundraiser = ({}: FundraiserProps) => {
                 )}
             </Column>
 
-            <Paragraph color='text2' lineHeight={1.2} margin={`0 0 ${theme.spacing[5]} 0`}>
+            <Text
+                variant='paragraph'
+                color='text2'
+                lineHeight={1.2}
+                margin={`0 0 ${theme.spacing[5]} 0`}
+            >
                 {fundraiser?.body}
-            </Paragraph>
+            </Text>
 
-            <Header3 color='text1' margin={`0 0 ${theme.spacing[5]} 0`}>
+            <Text variant='header3' color='text1' margin={`0 0 ${theme.spacing[5]} 0`}>
                 Top donations
-            </Header3>
+            </Text>
             <Styled.DonationCardGrid>
                 {[1, 2, 3, 4].map(() => (
                     <DonationCard

@@ -1,7 +1,7 @@
 import { useTheme } from 'styled-components';
 import { ButtonColored } from '../../common/Button/Button';
 import { Row } from '../../common/Layout/Row';
-import { ParagraphBlack2, ParagraphSmall } from '../../common/Text/Text.styles';
+import { Text } from '../../common/Text/Text.styles';
 import ModalBase, { ModalBaseProps } from '../ModalBase';
 import * as Styled from './DonateModal.styles';
 
@@ -19,19 +19,31 @@ const DonateModal = ({ ...props }: DonateModalProps) => {
         <ModalBase {...props}>
             <Styled.DonateModal>
                 <Row margin={`0 0 ${theme.spacing[6]} 0`} className='row'>
-                    <ParagraphBlack2 color='text1' margin={`0 ${theme.spacing[3]} 0 0`}>
+                    <Text
+                        variant='paragraphBlack2'
+                        color='text1'
+                        margin={`0 ${theme.spacing[3]} 0 0`}
+                    >
                         Connected as:
-                    </ParagraphBlack2>
+                    </Text>
                     <Styled.WalletAddress>
-                        <ParagraphBlack2 color='hoverText1'>0x131331gefer</ParagraphBlack2>
+                        <Text variant='paragraphBlack2' color='hoverText1'>
+                            0x131331gefer
+                        </Text>
                     </Styled.WalletAddress>
                 </Row>
 
                 <Row margin={`0 0 ${theme.spacing[6]} 0`}>
-                    <ParagraphBlack2 color='text1' margin={`0 ${theme.spacing[3]} 0 0`}>
+                    <Text
+                        variant='paragraphBlack2'
+                        color='text1'
+                        margin={`0 ${theme.spacing[3]} 0 0`}
+                    >
                         Balance:
-                    </ParagraphBlack2>
-                    <ParagraphBlack2 color='hoverText1'>100 USDT</ParagraphBlack2>
+                    </Text>
+                    <Text variant='paragraphBlack2' color='hoverText1'>
+                        100 USDT
+                    </Text>
                 </Row>
 
                 {[
@@ -40,14 +52,17 @@ const DonateModal = ({ ...props }: DonateModalProps) => {
                     { text: 'Message', description: 'Optional' },
                 ].map(({ text, description }) => (
                     <Row margin={`0 0 ${theme.spacing[6]} 0`}>
-                        <ParagraphBlack2
+                        <Text
+                            variant='paragraphBlack2'
                             color='text1'
                             margin={`0 ${theme.spacing[3]} 0 0`}
                             className='stretch'
                         >
                             {text}
-                        </ParagraphBlack2>
-                        <ParagraphSmall color='text2'>{description}</ParagraphSmall>
+                        </Text>
+                        <Text variant='paragraphSmall' color='text2'>
+                            {description}
+                        </Text>
                     </Row>
                 ))}
 
