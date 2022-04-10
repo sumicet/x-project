@@ -5,7 +5,8 @@ const StyledWrapper = styled.div<{ margin?: string; width?: string; height?: str
     position: relative;
     width: ${props => props.width || '100%'};
     height: ${props => props.height || '100%'};
-    min-height: 100%;
+    min-height: ${props => props.height || '100%'};
+    min-width: ${props => props.width || '100%'};
     ${props => props.margin && `margin: ${props.margin}`};
     overflow: hidden;
     border-radius: ${props => props.theme.borderRadius};

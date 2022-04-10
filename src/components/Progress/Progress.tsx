@@ -2,8 +2,9 @@ import { useMemo } from 'react';
 import { useTheme } from 'styled-components';
 import { config } from '../../config';
 import { Currency } from '../../redux/apis/fundraisers/types';
+import { useAppSelector } from '../../redux/hooks';
 import { Row } from '../common/Layout/Row';
-import { Header3, ParagraphSmall } from '../common/Text/Text.styles';
+import { Header2, Header3, ParagraphSmall } from '../common/Text/Text.styles';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import * as Styled from './Progress.styles';
 
@@ -23,15 +24,24 @@ const Progress = ({ collected, goal, currencies, currenciesCount, margin }: Prog
         [currencies, currenciesCount]
     );
 
+    const { width } = useAppSelector(state => state.ui.window);
+
+    const isMobile = width < theme.breakpoint.sm;
+
     return (
         <Styled.Progress style={{ margin }}>
             <ProgressBar margin={`0 0 ${theme.spacing[4]} 0`} />
-            <Row margin={`0 0 ${theme.spacing[1]} 0`}>
-                {collected && (
-                    <Header3 color='text1' className='stretch'>
-                        {parseFloat(collected).toLocaleString()} {config.fiatCurrency}
-                    </Header3>
-                )}
+            <Row margin={`0 0 ${theme.spacing[2]} 0`}>
+                {collected &&
+                    (!isMobile ? (
+                        <Header3 color='text1' className='stretch'>
+                            {parseFloat(collected).toLocaleString()} {config.fiatCurrency}
+                        </Header3>
+                    ) : (
+                        <Header3 color='text1' className='stretch'>
+                            {parseFloat(collected).toLocaleString()} {config.fiatCurrency}
+                        </Header3>
+                    ))}
                 {goal && (
                     <Header3 color='text2'>
                         {parseFloat(goal).toLocaleString()} {config.fiatCurrency}
@@ -40,28 +50,19 @@ const Progress = ({ collected, goal, currencies, currenciesCount, margin }: Prog
             </Row>
             <Row>
                 {currencies && currencies.length > 0 && (
-                    <>
-                        <ParagraphSmall color='text3' className='same-line'>
-                            Collected&nbsp;
-                        </ParagraphSmall>
+                    <ParagraphSmall className='collected' lineHeight={1.2}>
+                        <span>Collected&nbsp;</span>
+
                         {currencies.map((currency, index) => (
                             <>
-                                <ParagraphSmall color='text2' className='same-line'>
+                                <span key={currency.name} className='text2'>
                                     {currency.amount} {currency.name}
-                                </ParagraphSmall>
-                                {index < currencies.length - 1 && (
-                                    <ParagraphSmall color='text3' className='same-line'>
-                                        ,&nbsp;
-                                    </ParagraphSmall>
-                                )}
+                                </span>
+                                <span key={`${currency.name}-space`}>,&nbsp;</span>
                             </>
                         ))}
-                        {currenciesNotVisible && (
-                            <ParagraphSmall color='text3' className='same-line'>
-                                , and {currenciesNotVisible} more
-                            </ParagraphSmall>
-                        )}
-                    </>
+                        {currenciesNotVisible && <span>and {currenciesNotVisible} more</span>}
+                    </ParagraphSmall>
                 )}
             </Row>
         </Styled.Progress>

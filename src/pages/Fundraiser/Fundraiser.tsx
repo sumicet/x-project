@@ -8,11 +8,12 @@ import Image from '../../components/common/Image/Image';
 import { Column } from '../../components/common/Layout/Column';
 import { Row } from '../../components/common/Layout/Row';
 import SquareImage from '../../components/common/SquareImage/SquareImage';
-import { Header1, Header3, Paragraph } from '../../components/common/Text/Text.styles';
+import { Header1, Header2, Header3, Paragraph } from '../../components/common/Text/Text.styles';
 import FundraiserAssociate from '../../components/FundraiserAssociate/FundraiserAssociate';
 import Progress from '../../components/Progress/Progress';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import { fundraisers } from '../../data/mock';
+import { useAppSelector } from '../../redux/hooks';
 import * as Styled from './Fundraiser.styles';
 
 interface FundraiserProps {}
@@ -20,12 +21,13 @@ interface FundraiserProps {}
 const Fundraiser = ({}: FundraiserProps) => {
     const { id } = useParams();
     const theme = useTheme();
-    const { height, width } = useWindowSize();
+    const { width } = useAppSelector(state => state.ui.window);
 
     const fundraiser = fundraisers.find(f => f.id === id);
-    const isMobile = width < theme.breakpoint.md;
+    const isTablet = width < theme.breakpoint.md;
+    const isMobile = width < theme.breakpoint.sm;
 
-    if (!isMobile) {
+    if (!isTablet) {
         return (
             <Styled.Fundraiser>
                 <Styled.Container>
@@ -101,9 +103,15 @@ const Fundraiser = ({}: FundraiserProps) => {
     return (
         <Styled.Fundraiser>
             <SquareImage src={fundraiser?.image} margin={`0 0 ${theme.spacing[5]} 0`} />
-            <Header1 color='text1' margin={`0 0 ${theme.spacing[5]} 0`}>
-                {fundraiser?.title}
-            </Header1>
+            {!isMobile ? (
+                <Header1 color='text1' margin={`0 0 ${theme.spacing[5]} 0`}>
+                    {fundraiser?.title}
+                </Header1>
+            ) : (
+                <Header2 color='text1' margin={`0 0 ${theme.spacing[5]} 0`}>
+                    {fundraiser?.title}
+                </Header2>
+            )}
             <Progress
                 collected={fundraiser?.funds.collected || null}
                 goal={fundraiser?.funds.goal || null}
