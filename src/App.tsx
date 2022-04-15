@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
+import toast from 'react-hot-toast';
 import { Route, Routes } from 'react-router-dom';
 import { useWindowSize } from 'react-use';
 import BodyWrapper from './components/BodyWrapper/BodyWrapper';
+import { useEagerConnection } from './contexts/WalletContext/useEagerConnection';
 import About from './pages/About/About';
 import Categories from './pages/Categories/Categories';
 import Contact from './pages/Contact/Contact';
@@ -24,6 +26,8 @@ const App = () => {
             })
         );
     }, [width, height, dispatch]);
+
+    useEagerConnection();
 
     return (
         <BodyWrapper>
