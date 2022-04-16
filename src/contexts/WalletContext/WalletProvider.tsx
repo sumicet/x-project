@@ -1,6 +1,8 @@
 import { createContext, ReactNode, useCallback, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import Web3 from 'web3';
+import { config } from '../../config';
+import { getLocalStorage, setLocalStorage } from '../../utils/wallet';
 
 type Connect = () => Promise<
     | {
@@ -35,14 +37,14 @@ const provider = window.ethereum;
 const noProviderError = 'No ethereum providers detected.';
 
 const networkIds = {
-    Mumbai: `0x${(80001).toString(16)}`,
-    Polygon: `0x${(137).toString(16)}`,
+    Mumbai: `0x${config.networkId.Mumbai.toString(16)}`,
+    Polygon: `0x${config.networkId.Polygon.toString(16)}`,
 };
 
 const WalletProvider = ({ children }: { children: ReactNode }) => {
     const [web3, setWeb3] = useState<Web3 | null>(null);
     const [walletAddress, setWalletAddress] = useState<string | null>(null);
-    const [isLoadingWallet, setIsLoadingWallet] = useState<boolean>(true);
+    const [isLoadingWallet, setIsLoadingWallet] = useState<boolean>(false);
 
     const connect: Connect = useCallback(async () => {
         setIsLoadingWallet(true);
@@ -101,6 +103,7 @@ const WalletProvider = ({ children }: { children: ReactNode }) => {
                 },
             };
         } catch (error: any) {
+            setIsLoadingWallet(false);
             return {
                 status: 'error',
                 message:
@@ -112,6 +115,7 @@ const WalletProvider = ({ children }: { children: ReactNode }) => {
     const disconnect = useCallback(() => {
         setWeb3(null);
         setWalletAddress(null);
+        setLocalStorage({ canConnectWallet: false });
     }, []);
 
     useEffect(() => {
