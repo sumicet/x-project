@@ -11,21 +11,15 @@ import { ReactComponent as Logo } from '../../assets/images/logo.svg';
 import * as Styled from './Header.styles';
 import Input from '../common/Input/Input';
 import { useTheme } from 'styled-components';
+import { useWallet } from '../../contexts/WalletContext/useWallet';
 
 interface HeaderProps {}
 
 const Header = ({}: HeaderProps) => {
-    const { walletAddress } = useAppSelector(state => state.wallet);
     const { width } = useAppSelector(state => state.ui.window);
     const theme = useTheme();
 
-    useEffect(() => {
-        console.log(walletAddress);
-    }, [walletAddress]);
-
-    const doSomething = () => {};
-
-    const connectWallet = useCallback(() => {}, []);
+    const { connect, disconnect, walletAddress, isLoadingWallet } = useWallet();
 
     return (
         <Styled.Header>
@@ -60,10 +54,12 @@ const Header = ({}: HeaderProps) => {
                     <div className='connect-button-container'>
                         <ButtonOutlineColored
                             text={
-                                (walletAddress && formatWalletAddress(walletAddress)) ||
-                                'Connect wallet'
+                                isLoadingWallet
+                                    ? 'Loading'
+                                    : (walletAddress && formatWalletAddress(walletAddress)) ??
+                                      'Connect wallet'
                             }
-                            onClick={walletAddress ? doSomething : connectWallet}
+                            onClick={walletAddress ? disconnect : connect}
                         />
                     </div>
                 </Styled.Links>
