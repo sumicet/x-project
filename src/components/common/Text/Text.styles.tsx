@@ -2,14 +2,14 @@ import { HTMLAttributes } from 'react';
 import styled from 'styled-components';
 import { Color, FontFamily, FontPresets, FontSize, FontWeight } from '../../../theme/default';
 
-interface TextProps extends HTMLAttributes<HTMLParagraphElement> {
+export interface TextProps extends Omit<HTMLAttributes<HTMLParagraphElement>, 'color'> {
     variant?: FontPresets;
     size?: FontSize;
-    color?: Color;
     weight?: FontWeight;
     family?: FontFamily;
     lineHeight?: number;
     margin?: string;
+    color?: Color;
 }
 
 export const Text = styled.p<TextProps>`

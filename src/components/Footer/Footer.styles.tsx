@@ -38,4 +38,12 @@ export const Footer = styled.div`
     .align-middle {
         align-items: center;
     }
+
+    .link {
+        color: ${props => props.theme.color.text2};
+    }
+
+    .link:hover {
+        color: ${props => props.theme.color.hoverText2};
+    }
 `;

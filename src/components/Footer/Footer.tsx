@@ -7,6 +7,7 @@ import { Column } from '../common/Layout/Column';
 import { Row } from '../common/Layout/Row';
 import { Link } from '../common/Link/Link';
 import { Text } from '../common/Text/Text.styles';
+import { TextLink } from '../common/TextLink/TextLink';
 import * as Styled from './Footer.styles';
 
 const footerData = [
@@ -15,6 +16,7 @@ const footerData = [
         elems: [
             { name: 'About', to: '/about' },
             { name: 'Contact', to: '/contact' },
+            { name: 'FAQ', to: '/faq' },
         ],
     },
     {
@@ -83,16 +85,17 @@ const Footer = () => {
                             {title}
                         </Text>
                         {elems.map(({ name, to }) => (
-                            <Link to={to}>
-                                <Text
-                                    variant='paragraph'
-                                    color='text2'
-                                    margin={`0 0 ${theme.spacing[3]} 0`}
-                                    className='text'
-                                >
-                                    {name}
-                                </Text>
-                            </Link>
+                            <TextLink
+                                key={name}
+                                to={to}
+                                color='text2'
+                                colorHover='hoverText2'
+                                variant='paragraph'
+                                margin={`0 0 ${theme.spacing[3]} 0`}
+                                className='text'
+                            >
+                                {name}
+                            </TextLink>
                         ))}
                     </Column>
                 ))}

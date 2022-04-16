@@ -7,6 +7,7 @@ import { useEagerConnection } from './contexts/WalletContext/useEagerConnection'
 import About from './pages/About/About';
 import Categories from './pages/Categories/Categories';
 import Contact from './pages/Contact/Contact';
+import FAQ from './pages/FAQ/FAQ';
 import Fundraiser from './pages/Fundraiser/Fundraiser';
 import Home from './pages/Home/Home';
 import { useAppDispatch } from './redux/hooks';
@@ -37,6 +38,7 @@ const App = () => {
                 <Route path='/fundraiser/:id' element={<Fundraiser />} />
                 <Route path='/about' element={<About />} />
                 <Route path='/contact' element={<Contact />} />
+                <Route path='/faq' element={<FAQ />} />
             </Routes>
         </BodyWrapper>
     );

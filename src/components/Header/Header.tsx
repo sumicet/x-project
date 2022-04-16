@@ -12,6 +12,7 @@ import * as Styled from './Header.styles';
 import Input from '../common/Input/Input';
 import { useTheme } from 'styled-components';
 import { useWallet } from '../../contexts/WalletContext/useWallet';
+import { TextLink } from '../common/TextLink/TextLink';
 
 interface HeaderProps {}
 
@@ -31,25 +32,29 @@ const Header = ({}: HeaderProps) => {
                         </Link>
                     </Styled.LogoContainer>
 
-                    <Link to='/'>
-                        <Text variant='paragraphBlack1' margin='0 32px 0 0' className='text'>
-                            Discover
-                        </Text>
-                    </Link>
+                    <TextLink to='/' variant='paragraphBlack1' margin='0 32px 0 0' className='text'>
+                        Discover
+                    </TextLink>
 
-                    <Link to='/categories'>
-                        <Text variant='paragraphBlack1' margin='0 32px 0 0' className='text'>
-                            Categories
-                        </Text>
-                    </Link>
+                    <TextLink
+                        to='/categories'
+                        variant='paragraphBlack1'
+                        margin='0 32px 0 0'
+                        className='text'
+                    >
+                        Categories
+                    </TextLink>
 
                     <Input placeholder='Search...' margin='0 32px 0 0' />
 
-                    <Link to='/how-it-works'>
-                        <Text variant='paragraphBlack1' margin='0 32px 0 0' className='text'>
-                            How it works
-                        </Text>
-                    </Link>
+                    <TextLink
+                        to='/how-it-works'
+                        variant='paragraphBlack1'
+                        margin='0 32px 0 0'
+                        className='text'
+                    >
+                        How it works
+                    </TextLink>
 
                     <div className='connect-button-container'>
                         <ButtonOutlineColored
