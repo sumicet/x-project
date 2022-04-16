@@ -24,7 +24,6 @@ export const TextLink = ({
     color = 'text1',
     ...props
 }: LinkProps) => {
-    console.log('colorHover', colorHover);
     if (to.includes('https://')) {
         return (
             <a href={to} target='_blank' rel='noreferrer' style={{ margin }}>

@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import toast from 'react-hot-toast';
 import { Route, Routes } from 'react-router-dom';
 import { useWindowSize } from 'react-use';
 import BodyWrapper from './components/BodyWrapper/BodyWrapper';
@@ -10,6 +9,10 @@ import Contact from './pages/Contact/Contact';
 import FAQ from './pages/FAQ/FAQ';
 import Fundraiser from './pages/Fundraiser/Fundraiser';
 import Home from './pages/Home/Home';
+import {
+    useAddFundraiserMutation,
+    useGetFundraisersQuery,
+} from './redux/apis/fundraisers/fundraisersApi';
 import { useAppDispatch } from './redux/hooks';
 import { setUi } from './redux/slices/uiSlice';
 
@@ -29,6 +32,17 @@ const App = () => {
     }, [width, height, dispatch]);
 
     useEagerConnection();
+
+    const [addFundraiser] = useAddFundraiserMutation();
+    const { data } = useGetFundraisersQuery();
+
+    // Uncomment to add initial data in the database
+    // useEffect(() => {
+    //     fundraisers.map(f => {
+    //         const { id, ...rest } = f;
+    //         addFundraiser({ ...f });
+    //     });
+    // }, [addFundraiser]);
 
     return (
         <BodyWrapper>
