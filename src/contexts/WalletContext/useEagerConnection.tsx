@@ -13,7 +13,6 @@ export const useEagerConnection = () => {
         const localStorage = getLocalStorage();
 
         if (localStorage && !localStorage.canConnectWallet) {
-            console.log(getLocalStorage());
             return;
         }
 

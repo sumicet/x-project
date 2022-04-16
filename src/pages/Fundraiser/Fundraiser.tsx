@@ -9,8 +9,8 @@ import SquareImage from '../../components/common/SquareImage/SquareImage';
 import { Text } from '../../components/common/Text/Text.styles';
 import FundraiserAssociate from '../../components/FundraiserAssociate/FundraiserAssociate';
 import Progress from '../../components/Progress/Progress';
-import { fundraisers } from '../../data/mock';
 import { useAppSelector } from '../../redux/hooks';
+import { useGetFundraiserQuery } from '../../redux/apis/fundraisers/fundraisersApi';
 import * as Styled from './Fundraiser.styles';
 
 interface FundraiserProps {}
@@ -20,7 +20,12 @@ const Fundraiser = ({}: FundraiserProps) => {
     const theme = useTheme();
     const { width } = useAppSelector(state => state.ui.window);
 
-    const fundraiser = fundraisers.find(f => f.id === id);
+    const {
+        data: fundraiser,
+        isLoading,
+        isError,
+    } = useGetFundraiserQuery({ id: id ?? '' }, { skip: !id });
+
     const isTablet = width < theme.breakpoint.md;
     const isMobile = width < theme.breakpoint.sm;
 
