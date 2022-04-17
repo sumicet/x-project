@@ -36,7 +36,7 @@ const Fundraiser = ({}: FundraiserProps) => {
                     {' '}
                     <SquareImage src={fundraiser?.image} margin={`0 0 ${theme.spacing[6]} 0`} />
                     <Text variant='paragraph' color='text2' lineHeight={1.2}>
-                        {fundraiser?.body}
+                        {fundraiser?.description}
                     </Text>
                 </Styled.Container>
                 <Styled.StickyContainer>
@@ -57,14 +57,6 @@ const Fundraiser = ({}: FundraiserProps) => {
                         }
                         margin={`0 0 ${theme.spacing[6]} 0`}
                     />
-                    <Text
-                        variant='paragraph'
-                        color='text2'
-                        lineHeight={1.2}
-                        margin={`0 0 ${theme.spacing[6]} 0`}
-                    >
-                        {fundraiser?.description}
-                    </Text>
                     <Row margin={`0 0 ${theme.spacing[5]} 0`}>
                         <ButtonColored
                             text='Donate'
@@ -139,14 +131,6 @@ const Fundraiser = ({}: FundraiserProps) => {
                 />
                 <ButtonOutlineNeutral text='Share' className='stretch' />
             </Row>
-            <Text
-                variant='paragraph'
-                color='text2'
-                lineHeight={1.2}
-                margin={`0 0 ${theme.spacing[6]} 0`}
-            >
-                {fundraiser?.description}
-            </Text>
             <Column margin={`0 0 ${theme.spacing[6]} 0`}>
                 <FundraiserAssociate
                     type='Creator'
@@ -171,7 +155,7 @@ const Fundraiser = ({}: FundraiserProps) => {
                 lineHeight={1.2}
                 margin={`0 0 ${theme.spacing[6]} 0`}
             >
-                {fundraiser?.body}
+                {fundraiser?.description}
             </Text>
 
             <Text variant='header3' color='text1' margin={`0 0 ${theme.spacing[5]} 0`}>

@@ -31,7 +31,6 @@ export interface Fundraiser {
     id: string;
     title: string;
     description: string;
-    body: string;
     creator: User;
     receiver?: User;
     funds: {

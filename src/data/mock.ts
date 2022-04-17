@@ -3,7 +3,7 @@ export const fundraisers: Fundraiser[] = [
     {
         id: '1',
         title: 'Stand with Ukraine',
-        body: `Our family is starting this fund to help provide immediate support and we will be matching up to $3 million dollars.
+        description: `Our family is starting this fund to help provide immediate support and we will be matching up to $3 million dollars.
  
         While we are witnessing the bravery of Ukrainians, we are also bearing witness to the unimaginable burden of those who have chosen safety. Countless amounts of people have left everything they know and love behind to seek refuge. With nothing but what they could carry, these Ukrainian refugees are in need of housing and supplies right away.
          
@@ -54,8 +54,6 @@ export const fundraisers: Fundraiser[] = [
             username: 'Panda',
             walletAddress: '0xcf3AF0B1Aa5b6C143dcaf48Ff3C893C53744cD8C',
         },
-        description:
-            'Today, I am a proud Ukrainian. While my family came to the United States in 1991, I was born in Chernivtsi, Ukraine in 1983. Ukrainians are proud and brave people who deserve our help in their time of need. This unjust attack on Ukraine and humanity at large is devastating and the Ukrainian people need our support. Our family is starting this fund to help provide immediate support and we will be matching up to $3 million dollars.',
         receiver: {
             image: 'https://cdn.quotesgram.com/img/43/6/620194072-Baby-panda-giant-bucket-of-cute.jpg',
             username: 'ReceiverPanda',
@@ -78,7 +76,7 @@ export const fundraisers: Fundraiser[] = [
     {
         id: '2',
         title: 'Keep Ukraine’s media going',
-        body: `Our family is starting this fund to help provide immediate support and we will be matching up to $3 million dollars.
+        description: `Our family is starting this fund to help provide immediate support and we will be matching up to $3 million dollars.
  
         While we are witnessing the bravery of Ukrainians, we are also bearing witness to the unimaginable burden of those who have chosen safety. Countless amounts of people have left everything they know and love behind to seek refuge. With nothing but what they could carry, these Ukrainian refugees are in need of housing and supplies right away.
          
@@ -93,7 +91,6 @@ export const fundraisers: Fundraiser[] = [
             username: 'Panda',
             walletAddress: '0xcf3AF0B1Aa5b6C143dcaf48Ff3C893C53744cD8C',
         },
-        description: 'Ukraine is facing an unprecedented, full-scale war.',
         receiver: {
             image: 'https://cdn.quotesgram.com/img/43/6/620194072-Baby-panda-giant-bucket-of-cute.jpg',
             username: 'ReceiverPanda',
@@ -116,7 +113,7 @@ export const fundraisers: Fundraiser[] = [
     {
         id: '3',
         title: 'Summiting Mount Everest for a Cause',
-        body: `Our family is starting this fund to help provide immediate support and we will be matching up to $3 million dollars.
+        description: `Our family is starting this fund to help provide immediate support and we will be matching up to $3 million dollars.
  
         While we are witnessing the bravery of Ukrainians, we are also bearing witness to the unimaginable burden of those who have chosen safety. Countless amounts of people have left everything they know and love behind to seek refuge. With nothing but what they could carry, these Ukrainian refugees are in need of housing and supplies right away.
          
@@ -131,8 +128,6 @@ export const fundraisers: Fundraiser[] = [
             username: 'Panda',
             walletAddress: '0xcf3AF0B1Aa5b6C143dcaf48Ff3C893C53744cD8C',
         },
-        description:
-            'I am climbing the world’s highest mountain in Spring 2022 to spread awareness of climate change and to record performing music concert at the highest altitude on land. During my expedition, I will also be joining the Nepalese army for the mountain cleaning campaign, organized by the Government of Nepal. My long-term goals are to advocate for climate change, inspire other people to act on climate change, and uplift and strengthen the livelihood of indigenous people and communities in remote areas of Nepal.',
         receiver: {
             image: 'https://cdn.quotesgram.com/img/43/6/620194072-Baby-panda-giant-bucket-of-cute.jpg',
             username: 'ReceiverPanda',
@@ -155,7 +150,7 @@ export const fundraisers: Fundraiser[] = [
     {
         id: '4',
         title: 'My dream car is a Tesla.',
-        body: `Our family is starting this fund to help provide immediate support and we will be matching up to $3 million dollars.
+        description: `Our family is starting this fund to help provide immediate support and we will be matching up to $3 million dollars.
  
         While we are witnessing the bravery of Ukrainians, we are also bearing witness to the unimaginable burden of those who have chosen safety. Countless amounts of people have left everything they know and love behind to seek refuge. With nothing but what they could carry, these Ukrainian refugees are in need of housing and supplies right away.
          
@@ -170,8 +165,6 @@ export const fundraisers: Fundraiser[] = [
             username: 'Panda',
             walletAddress: '0xcf3AF0B1Aa5b6C143dcaf48Ff3C893C53744cD8C',
         },
-        description:
-            'Hey guys my name is Jordan and there is no way to sugarcoat it so I want to be brutally honest. I’ve been through a lot of my life and I’m very grateful for up there people and things that I have encountered along the way. But my car is about to break down and I do not have the funds in order to get it replaced. My dream car is in fact a Tesla however I really just need a car. If you do not want to help I completely understand but if you guys do it will be appreciate it I love you all. From your friendly neighborhood Jordan the stallion.',
         receiver: {
             image: 'https://cdn.quotesgram.com/img/43/6/620194072-Baby-panda-giant-bucket-of-cute.jpg',
             username: 'ReceiverPanda',
@@ -194,7 +187,7 @@ export const fundraisers: Fundraiser[] = [
     {
         id: '5',
         title: 'Send Elijah to Japan!',
-        body: `Our family is starting this fund to help provide immediate support and we will be matching up to $3 million dollars.
+        description: `Our family is starting this fund to help provide immediate support and we will be matching up to $3 million dollars.
  
         While we are witnessing the bravery of Ukrainians, we are also bearing witness to the unimaginable burden of those who have chosen safety. Countless amounts of people have left everything they know and love behind to seek refuge. With nothing but what they could carry, these Ukrainian refugees are in need of housing and supplies right away.
          
@@ -209,8 +202,6 @@ export const fundraisers: Fundraiser[] = [
             username: 'Panda',
             walletAddress: '0xcf3AF0B1Aa5b6C143dcaf48Ff3C893C53744cD8C',
         },
-        description:
-            'My son Elijah has been given the opportunity to go to Japan. He will be travel for 11 days with his classmates. As a young black man, the obstacles of society challenge him everyday. He has is active in football, works a job and helps me with his sisters. He is a great kid with fantastic ethic and drive. I’m so proud of the man he is growing up to be and I would love your support in sending him to Japan in this opportunity of a lifetime. I appreciate you all! Thank you!',
         receiver: {
             image: 'https://cdn.quotesgram.com/img/43/6/620194072-Baby-panda-giant-bucket-of-cute.jpg',
             username: 'ReceiverPanda',
