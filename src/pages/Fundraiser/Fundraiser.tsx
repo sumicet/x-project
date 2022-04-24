@@ -12,6 +12,8 @@ import Progress from '../../components/Progress/Progress';
 import { useAppSelector } from '../../redux/hooks';
 import { useGetFundraiserQuery } from '../../redux/apis/fundraisers/fundraisersApi';
 import * as Styled from './Fundraiser.styles';
+import { coins } from '../../data/coins';
+import Coin from '../../components/Coin/Coin';
 
 interface FundraiserProps {}
 
@@ -20,11 +22,7 @@ const Fundraiser = ({}: FundraiserProps) => {
     const theme = useTheme();
     const { width } = useAppSelector(state => state.ui.window);
 
-    const {
-        data: fundraiser,
-        isLoading,
-        isError,
-    } = useGetFundraiserQuery({ id: id ?? '' }, { skip: !id });
+    const { data: fundraiser } = useGetFundraiserQuery({ id: id ?? '' }, { skip: !id });
 
     const isTablet = width < theme.breakpoint.md;
     const isMobile = width < theme.breakpoint.sm;
@@ -65,6 +63,9 @@ const Fundraiser = ({}: FundraiserProps) => {
                         />
                         <ButtonOutlineNeutral text='Share' className='stretch' />
                     </Row>
+                    {coins.map(coin => (
+                        <Coin>{coin.name}</Coin>
+                    ))}
                     <Text variant='header3' color='text1' margin={`0 0 ${theme.spacing[6]} 0`}>
                         Top donations
                     </Text>
@@ -83,6 +84,7 @@ const Fundraiser = ({}: FundraiserProps) => {
                     <Category
                         name={fundraiser?.category || null}
                         margin={`0 0 ${theme.spacing[6]} 0`}
+                        color='text3'
                     />
                     <FundraiserAssociate
                         type='Creator'
@@ -172,7 +174,7 @@ const Fundraiser = ({}: FundraiserProps) => {
                 ))}
             </Styled.DonationCardGrid>
 
-            <Category name={fundraiser?.category || null} />
+            <Category color='text3' name={fundraiser?.category || null} />
         </Styled.Fundraiser>
     );
 };

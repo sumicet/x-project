@@ -43,6 +43,8 @@ export const Footer = styled.div`
         color: ${props => props.theme.color.text2};
     }
 
+    ${props => props.theme.animation.transition.default('all')};
+
     .link:hover {
         color: ${props => props.theme.color.hoverText2};
     }

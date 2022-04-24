@@ -18,6 +18,8 @@ export const IconContainer = styled.div<{ variant: 'outline' | 'fill' }>`
         props.variant === 'outline' && `border: 1px solid ${props.theme.color.neutralMedium2};`}
     ${props => props.variant === 'fill' && `background-color: ${props.theme.color.neutralMedium1};`}
 
+    ${props => props.theme.animation.transition.default('all')};
+
     &:hover,
     &:active {
         ${props =>

@@ -8,7 +8,6 @@ const StyledImage = styled.img<{ isHovered?: boolean }>`
     height: 100%;
     width: 100%;
     object-fit: cover;
-    transform: scale(${props => (props.isHovered ? 1.03 : 1)});
     ${props => props.theme.animation.transition.default('transform')};
 `;
 
@@ -17,9 +16,19 @@ export interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
     height?: string;
     margin?: string;
     isHovered?: boolean;
+    borderRadius?: string;
 }
 
-const Image: React.FC<ImageProps> = ({ src, alt, margin, width, height, isHovered, ...props }) => {
+const Image: React.FC<ImageProps> = ({
+    src,
+    alt,
+    margin,
+    width,
+    height,
+    isHovered,
+    borderRadius,
+    ...props
+}) => {
     const imgRef = useRef<HTMLDivElement>(null);
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -57,13 +66,19 @@ const Image: React.FC<ImageProps> = ({ src, alt, margin, width, height, isHovere
     }, [src]);
 
     return (
-        <Wrapper ref={imgRef} margin={margin} width={width} height={height}>
+        <Wrapper
+            ref={imgRef}
+            margin={margin}
+            width={width}
+            height={height}
+            borderRadius={borderRadius}
+        >
             {isLoaded ? (
                 <StyledImage src={src} alt={alt} isHovered={isHovered} {...props} />
             ) : (
                 <Placeholder {...props} />
             )}
-            <Darken opacity={isHovered ? 0 : 0.3} />
+            <Darken opacity={!isHovered ? 0 : 0.3} borderRadius={borderRadius} />
         </Wrapper>
     );
 };

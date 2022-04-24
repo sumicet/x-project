@@ -1,32 +1,26 @@
-import FundraiserCard from '../../components/cards/FundraiserCard/FundraiserCard';
+import { useTheme } from 'styled-components';
+import FundraiserGrid from '../../components/FundraiserGrid/FundraiserGrid';
+import HomeTopSection from '../../components/HomeTopSection/HomeTopSection';
 import { useGetFundraisersQuery } from '../../redux/apis/fundraisers/fundraisersApi';
-import * as Styled from './Home.styled';
+import { useAppSelector } from '../../redux/hooks';
 
 const Home = () => {
     const { data, isLoading, isError } = useGetFundraisersQuery();
+    const theme = useTheme();
+    const width = useAppSelector(state => state.ui.window.width);
+    const isMobile = width < theme.breakpoint.sm;
 
     return (
         <div>
-            {/* <Header1 color='text1'>Buttons</Header1>
-            <ButtonColored text='Donate' margin='0 0 12px 0' />
-            <ButtonOutlineColored text='Connect wallet' margin='0 0 12px 0' />
-            <ButtonOutlineNeutral text='Share' /> */}
+            <HomeTopSection margin={`${isMobile ? '50px' : '100px'} 0`} />
+            <FundraiserGrid
+                data={data}
+                count={8}
+                title='Popular fundraisers'
+                margin={`0 0 ${theme.spacing[6]} 0`}
+            />
 
-            <Styled.FundraiserGrid>
-                {data &&
-                    data.map(fundraiser => (
-                        <FundraiserCard
-                            id={fundraiser.id}
-                            title={fundraiser.title}
-                            description={fundraiser.description}
-                            collected={fundraiser.funds.collected}
-                            goal={fundraiser.funds.goal}
-                            image={fundraiser.image}
-                            timestamp={fundraiser.timestamp}
-                            category={fundraiser.category}
-                        />
-                    ))}
-            </Styled.FundraiserGrid>
+            <FundraiserGrid data={data} count={4} title='Close to you' />
         </div>
     );
 };

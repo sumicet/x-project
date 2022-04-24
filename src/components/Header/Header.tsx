@@ -2,7 +2,7 @@ import { useCallback, useEffect } from 'react';
 import MobileMenu from '../../assets/images/components/MobileMenu';
 import { useAppSelector } from '../../redux/hooks';
 import { formatWalletAddress } from '../../utils/common';
-import { ButtonOutlineColored } from '../common/Button/Button';
+import { ButtonColored, ButtonOutlineColored } from '../common/Button/Button';
 import IconContainer from '../common/IconContainer/IconContainer';
 import { Link } from '../common/Link/Link';
 import { Text } from '../common/Text/Text.styles';
@@ -31,22 +31,16 @@ const Header = ({}: HeaderProps) => {
                             <Logo />
                         </Link>
                     </Styled.LogoContainer>
-
-                    <TextLink to='/' variant='paragraphBlack1' margin='0 32px 0 0' className='text'>
-                        Discover
-                    </TextLink>
-
                     <TextLink
-                        to='/categories'
+                        to='/explore'
                         variant='paragraphBlack1'
                         margin='0 32px 0 0'
                         className='text'
                     >
-                        Categories
+                        Explore
                     </TextLink>
 
                     <Input placeholder='Search...' margin='0 32px 0 0' />
-
                     <TextLink
                         to='/how-it-works'
                         variant='paragraphBlack1'
@@ -55,9 +49,8 @@ const Header = ({}: HeaderProps) => {
                     >
                         How it works
                     </TextLink>
-
                     <div className='connect-button-container'>
-                        <ButtonOutlineColored
+                        <ButtonColored
                             text={
                                 isLoadingWallet
                                     ? 'Loading'

@@ -5,6 +5,7 @@ import { config } from '../../../config';
 import { FundraiserCategory } from '../../../redux/apis/fundraisers/types';
 import { theme } from '../../../theme/default';
 import Category from '../../Category/Category';
+import { Row } from '../../common/Layout/Row';
 import SquareImage from '../../common/SquareImage/SquareImage';
 import { Text, TextGradient, TextRowEllipsis } from '../../common/Text/Text.styles';
 import * as Styled from './FundraiserCard.styled';
@@ -29,9 +30,6 @@ const FundraiserCard = ({
     category,
     id,
 }: FundraiserCardProps) => {
-    // const { width, height } = useAppSelector(state => state.ui.window);
-
-    const [ref, { width }] = useMeasure<HTMLDivElement>();
     const [isHovered, setIsHovered] = useState<boolean>(false);
 
     const handleStartHover = useCallback(() => setIsHovered(true), []);
@@ -41,7 +39,6 @@ const FundraiserCard = ({
     return (
         <Link to={{ pathname: `/fundraiser/${id}` }}>
             <Styled.FundraiserCard
-                ref={ref}
                 onMouseEnter={handleStartHover}
                 onMouseLeave={handleStopHover}
                 onTouchStart={handleStartHover}
@@ -51,39 +48,43 @@ const FundraiserCard = ({
                     src={image}
                     alt={title}
                     isHovered={isHovered}
-                    margin={`0 0 ${theme.spacing[4]} 0`}
+                    borderRadius={`${theme.borderRadius} ${theme.borderRadius} 0 0`}
                 />
-                <Text
-                    variant='header3'
-                    color={isHovered ? 'hoverText1' : 'text1'}
-                    margin={`0 0 ${theme.spacing[2]} 0`}
-                >
-                    <TextRowEllipsis rows={1}>{title}</TextRowEllipsis>
-                </Text>
-
-                <Styled.Description>
-                    <Text
-                        variant='paragraph'
-                        color={isHovered ? 'hoverText2' : 'text2'}
-                        margin={`0 0 ${theme.spacing[3]} 0`}
-                    >
-                        <TextRowEllipsis rows={3}>{description}</TextRowEllipsis>
+                <Styled.Content>
+                    <Text variant='header3' color='text1' margin={`0 0 ${theme.spacing[2]} 0`}>
+                        <TextRowEllipsis rows={1}>{title}</TextRowEllipsis>
                     </Text>
-                </Styled.Description>
 
-                <div>
-                    <Text
-                        variant='paragraphBlack1'
-                        color={isHovered ? 'hoverText1' : 'text1'}
-                        className='one-line'
-                        margin={`0 0 ${theme.spacing[3]} 0`}
-                    >
-                        Raised <TextGradient>{parseFloat(collected).toLocaleString()}</TextGradient>{' '}
-                        out of {parseFloat(goal).toLocaleString()} {config.fiatCurrency}
-                    </Text>
-                </div>
+                    <Styled.Description>
+                        <Text
+                            variant='paragraph'
+                            color='text2'
+                            margin={`0 0 ${theme.spacing[3]} 0`}
+                        >
+                            <TextRowEllipsis rows={3}>{description}</TextRowEllipsis>
+                        </Text>
+                    </Styled.Description>
 
-                <Category name={category} />
+                    <div>
+                        <Text
+                            variant='paragraphBlack1'
+                            color='text1'
+                            className='one-line'
+                            margin={`0 0 ${theme.spacing[4]} 0`}
+                        >
+                            Raised{' '}
+                            <TextGradient>{parseFloat(collected).toLocaleString()}</TextGradient>{' '}
+                            out of {parseFloat(goal).toLocaleString()} {config.fiatCurrency}
+                        </Text>
+                    </div>
+
+                    <Row className='center'>
+                        <Category name={category} color='text3' />
+                        <Text variant='paragraphSmall' color='text3' className='right'>
+                            2 months ago
+                        </Text>
+                    </Row>
+                </Styled.Content>
             </Styled.FundraiserCard>
         </Link>
     );

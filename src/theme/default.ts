@@ -103,6 +103,7 @@ export const theme = {
             2: 700,
             3: 900,
         },
+        lineHeight: 1.2,
     },
     borderRadius: '12px',
     spacing: {
@@ -119,7 +120,7 @@ export const theme = {
     },
     animation: {
         transition: {
-            default: (property: string) => `transition: ${property} 0.2s ease-in-out`,
+            default: (property: string) => `transition: ${property} 0.15s ease-in-out`,
         },
     },
 };

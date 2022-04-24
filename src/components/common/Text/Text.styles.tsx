@@ -22,7 +22,7 @@ export const Text = styled.p<TextProps>`
     font-family: ${props =>
         (props.family && props.theme.font.family[props.family]) ||
         props.theme.font.presets[props.variant || 'paragraph'].family};
-    line-height: ${props => props.lineHeight || 1};
+    line-height: ${props => props.lineHeight || props.theme.font.lineHeight};
 
     ${props => props.color && `color: ${props.theme.color[props.color]}`};
     ${props => props.margin && `margin: ${props.margin}`};

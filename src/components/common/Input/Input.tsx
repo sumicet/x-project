@@ -24,6 +24,8 @@ const Input = styled.input<InputProps>`
         color: ${props => props.theme.color.text3};
     }
 
+    ${props => props.theme.animation.transition.default('all')};
+
     &:focus:not(:disabled),
     &:hover:not(:disabled) {
         color: ${props => props.theme.color.text1};

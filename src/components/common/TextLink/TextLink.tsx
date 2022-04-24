@@ -11,6 +11,8 @@ interface LinkProps extends TextProps {
 
 const StyledTextLink = styled.span<{ color: Color; colorHover: Color }>`
     color: ${props => props.theme.color[props.color]};
+    ${props => props.theme.animation.transition.default('all')};
+
     &:hover {
         color: ${props => props.theme.color[props.colorHover]};
     }

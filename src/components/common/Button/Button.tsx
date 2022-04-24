@@ -26,6 +26,8 @@ export const Button = styled.button<BaseProps>`
 export const ButtonBaseColored = styled(Button)`
     background: ${props => props.theme.color.gradient};
 
+    ${props => props.theme.animation.transition.default('all')};
+
     &:hover {
         background: ${props =>
             `linear-gradient(315deg, ${props.theme.color.hoverText1}, ${props.theme.color.hoverText1});`};
@@ -35,6 +37,7 @@ export const ButtonBaseColored = styled(Button)`
 const ButtonOutlineColoredBaseContainer = styled.span`
     overflow: hidden;
     background: ${props => props.theme.color.gradient};
+    ${props => props.theme.animation.transition.default('all')};
     &:hover {
         background: ${props =>
             `linear-gradient(315deg, ${props.theme.color.hoverText1}, ${props.theme.color.hoverText1});`};
@@ -66,6 +69,7 @@ export const ButtonOutlineColoredBase = styled(Button)<{ color?: Color }>`
 export const ButtonOutlineNeutralBase = styled(Button)`
     background-color: transparent;
     border: 1px solid ${props => props.theme.color.neutralMedium2};
+    ${props => props.theme.animation.transition.default('all')};
 
     &:hover {
         border-color: ${props => props.theme.color.hoverNeutralMedium2};
